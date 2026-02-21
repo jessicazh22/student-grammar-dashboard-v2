@@ -92,15 +92,15 @@ export default function GloriaDashboard() {
                   activeId={activeTranscript}
                   onSelect={setActiveTranscript}
                 />
-                <PatternBreakdown patterns={gloriaErrorPatterns} />
                 <ErrorPatterns
                   patterns={gloriaErrorPatterns}
                   onStudy={setStudyPattern}
                 />
                 <LearningCards patterns={gloriaErrorPatterns} />
               </div>
-              <div className="lg:col-span-3">
+              <div className="lg:col-span-3 space-y-6">
                 <TranscriptViewer transcript={gloriaTranscript} />
+                <PatternBreakdown patterns={gloriaErrorPatterns} />
               </div>
             </div>
           </TabsContent>
