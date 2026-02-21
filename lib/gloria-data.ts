@@ -1,8 +1,18 @@
 import type { Transcript, ErrorPattern } from "@/lib/grammar-data"
 
 // ─── Gloria's transcript text ───
+// Punctuation and capitalization added for readability (not highlighted as errors).
+// Paragraph breaks added for scannability.
 
-const gloriaMoneyText = `So I actually got a friend who is really good at manage her money, um, I really want to develop this, uh, money skills cause before I'm kind of, I'm like, I have no concept about money, so, um, for example, um, if I hang out with friends in the restaurant, we all gonna order the drinks even though there's nothing I want to drink, I'll still order one. But my friend, um, there was a time we hang out and had dinner after she checked the drink menu and she said, oh, um, there's nothing I want to drink so I will not order. And after that I just realise, I wasted a lot of my money on something that I don't really need and I don't actually want, um, so that's a reason I want to develop this, um, good habit. This is not about rich and poor, it's about, do you have a clear mind or like clear concept with money and how you gonna use it as a tool rather than let the money control you. She also knows clearly about the, um, price of daily necessities like fruits, vegetables, um, tissues, paper towel like everything so you can tell when the price is going higher or um, is the price worth it when you buy the same thing at different places?`
+const gloriaMoneyText = `So, I actually got a friend who is really good at manage her money. Um, I really want to develop this, uh, money skills, cause before I'm kind of, I'm like, I have no concept about money.
+
+So, um, for example, um, if I hang out with friends in the restaurant, we all gonna order the drinks even though there's nothing I want to drink, I'll still order one. But my friend, um, there was a time we hang out and had dinner. After she checked the drink menu, she said, "Oh, um, there's nothing I want to drink, so I will not order."
+
+And after that I just realise, I wasted a lot of my money on something that I don't really need and I don't actually want. Um, so that's a reason I want to develop this, um, good habit.
+
+This is not about rich and poor. It's about, do you have a clear mind, or like, clear concept with money, and how you gonna use it as a tool rather than let the money control you.
+
+She also knows clearly about the, um, price of daily necessities, like fruits, vegetables, um, tissues, paper towels, like everything. So you can tell when the price is going higher, or um, is the price worth it when you buy the same thing at different places?`
 
 // ─── Gloria's transcript with inline errors ───
 
@@ -11,8 +21,21 @@ export const gloriaTranscript: Transcript = {
   title: "Money Management Habit",
   date: "2026-02-18",
   content: gloriaMoneyText,
-  score: 71,
+  score: 68,
   errors: [
+    {
+      id: "G0",
+      startIndex: gloriaMoneyText.indexOf("I actually got a friend"),
+      endIndex:
+        gloriaMoneyText.indexOf("I actually got a friend") +
+        "I actually got a friend".length,
+      category: "tense",
+      original: "I actually got a friend",
+      correction: "I actually have a friend",
+      explanation:
+        "When describing a current situation -- you still have this friend -- use the present tense 'have', not the past tense 'got'. 'Got' suggests you acquired the friend in the past and is less natural here.",
+      rule: "Use 'have' for something you currently possess. Use 'got' for the moment of acquiring it.",
+    },
     {
       id: "G1",
       startIndex: gloriaMoneyText.indexOf("good at manage her money"),
@@ -68,6 +91,19 @@ export const gloriaTranscript: Transcript = {
     },
     {
       id: "G4",
+      startIndex: gloriaMoneyText.indexOf("the drink menu"),
+      endIndex:
+        gloriaMoneyText.indexOf("the drink menu") +
+        "the drink menu".length,
+      category: "singular-plural",
+      original: "the drink menu",
+      correction: "the drinks menu",
+      explanation:
+        "When a noun acts as a modifier before another noun, it usually stays singular in English (e.g., 'shoe store'). But 'drinks menu' is an exception -- it's a fixed expression where 'drinks' keeps its plural form because it refers to a list of multiple drinks.",
+      rule: "Some compound nouns keep the plural: drinks menu, sports car, arms dealer. Learn these as fixed expressions.",
+    },
+    {
+      id: "G4b",
       startIndex: gloriaMoneyText.indexOf("there was a time we hang out"),
       endIndex:
         gloriaMoneyText.indexOf("there was a time we hang out") +
@@ -139,12 +175,26 @@ export const gloriaTranscript: Transcript = {
         gloriaMoneyText.indexOf(
           "rather than let the money control you"
         ) + "rather than let the money control you".length,
-      category: "articles",
+      category: "verb-patterns",
       original: "rather than let the money control you",
-      correction: "rather than let money control you",
+      correction: "rather than letting money control you",
       explanation:
-        "When talking about money as a general concept (not specific money), drop 'the'. You're making a philosophical point about money in general, so no article is needed.",
-      rule: "Abstract/general concepts don't use 'the': money, happiness, life, success.",
+        "Two things here: (1) after 'rather than', use the -ing form 'letting' to keep the sentence parallel, and (2) drop 'the' before 'money' since you're talking about money as a general concept, not specific money.",
+      rule: "'Rather than' + -ing form keeps sentences parallel: 'rather than letting', 'rather than waiting'.",
+      alternatives: [
+        {
+          label: "With -ing (natural)",
+          correction: "rather than letting money control you",
+          explanation:
+            "Using 'letting' matches the flow of the sentence and drops the unnecessary 'the'. This is the most natural option.",
+        },
+        {
+          label: "With 'instead of'",
+          correction: "instead of letting money control you",
+          explanation:
+            "'Instead of' + -ing is another natural way to express the same idea.",
+        },
+      ],
     },
     {
       id: "S1",
@@ -154,22 +204,62 @@ export const gloriaTranscript: Transcript = {
       category: "style",
       kind: "suggestion",
       original: "money skills",
-      correction: "financial skills",
+      correction: "financial literacy",
       explanation:
-        "While 'money skills' is perfectly understandable, more natural terms in English are 'financial skills' or 'money management skills'. These sound more polished and are what you'd see in professional or academic contexts.",
+        "While 'money skills' is perfectly understandable, native speakers would more commonly say 'financial literacy', 'financial skills', or 'money management skills'. These are natural collocations that sound polished in both casual and professional contexts.",
       rule: "Word choice: 'financial literacy' or 'financial skills' are more natural collocations than 'money skills'.",
       alternatives: [
+        {
+          label: "Most common",
+          correction: "financial literacy",
+          explanation:
+            "'Financial literacy' is the standard term for understanding how to manage money. You'll hear it in schools, news, and everyday conversation.",
+        },
         {
           label: "Professional",
           correction: "financial skills",
           explanation:
-            "'Financial skills' is the most common natural pairing in English.",
+            "'Financial skills' is a natural pairing that works well in both casual and formal settings.",
         },
         {
           label: "Descriptive",
           correction: "money management skills",
           explanation:
             "More specific and descriptive -- makes it clear you mean the skill of managing money.",
+        },
+      ],
+    },
+    {
+      id: "S1b",
+      startIndex: gloriaMoneyText.indexOf("develop this, um, good habit"),
+      endIndex:
+        gloriaMoneyText.indexOf("develop this, um, good habit") +
+        "develop this, um, good habit".length,
+      category: "style",
+      kind: "suggestion",
+      original: "develop this, um, good habit",
+      correction: "build better spending habits",
+      explanation:
+        "Your meaning is clear, but 'develop this good habit' is a bit vague -- which habit exactly? In English, being specific makes your point stronger. Try naming the habit directly.",
+      rule: "Be specific: instead of 'good habit', name the habit. It makes your English sound more precise and confident.",
+      alternatives: [
+        {
+          label: "Specific & natural",
+          correction: "build better spending habits",
+          explanation:
+            "'Build habits' and 'spending habits' are common collocations in English. This tells your listener exactly what kind of habit you mean.",
+        },
+        {
+          label: "With 'financial'",
+          correction: "develop better financial habits",
+          explanation:
+            "Uses 'financial habits' -- a natural pairing that connects to the money management theme of your story.",
+        },
+        {
+          label: "Casual & direct",
+          correction: "get better with money",
+          explanation:
+            "Simple, natural, and conversational. 'Get better with' is a common spoken phrase.",
         },
       ],
     },
@@ -214,7 +304,7 @@ export const gloriaTranscriptList: Omit<
     id: "gloria_money_001",
     title: "Money Management Habit",
     date: "2026-02-18",
-    score: 71,
+  score: 68,
   },
 ]
 
@@ -226,10 +316,10 @@ export const gloriaErrorPatterns: ErrorPattern[] = [
     category: "verb-patterns",
     name: "Verb Patterns",
     priority: "HIGH",
-    count: 3,
+    count: 4,
     conversationCount: 1,
     shortExplanation:
-      "Three patterns to watch: (1) after a preposition, always use -ing; (2) 'gonna' needs a helper verb like 'are' or 'will'; (3) use 'to + verb' for purpose.",
+      "Four patterns to watch: (1) after a preposition, always use -ing; (2) 'gonna' needs a helper verb like 'are' or 'will'; (3) 'rather than' + -ing keeps sentences parallel.",
     quickTip:
       "See a preposition (at, for, about)? The next verb must end in -ing. Using 'gonna'? Make sure there's a helper verb before it.",
     examples: [
@@ -250,6 +340,12 @@ export const gloriaErrorPatterns: ErrorPattern[] = [
         correct: "how you're gonna use it / how you will use it",
         context:
           "Same pattern -- add the helper verb before 'gonna'.",
+      },
+      {
+        incorrect: "rather than let the money control you",
+        correct: "rather than letting money control you",
+        context:
+          "'Rather than' + -ing keeps the sentence flowing naturally. Also drop 'the' before general concepts.",
       },
     ],
     studyContent: {
@@ -297,7 +393,7 @@ export const gloriaErrorPatterns: ErrorPattern[] = [
     category: "articles",
     name: "Article Usage",
     priority: "HIGH",
-    count: 2,
+    count: 1,
     conversationCount: 1,
     shortExplanation:
       "Using 'the' with general concepts or categories where no article is needed. Drop 'the' when you mean something in general, not a specific one.",
@@ -309,12 +405,6 @@ export const gloriaErrorPatterns: ErrorPattern[] = [
         correct: "order drinks",
         context:
           "You're talking about drinks in general, not specific ones. General categories don't need 'the'.",
-      },
-      {
-        incorrect: "let the money control you",
-        correct: "let money control you",
-        context:
-          "You're making a philosophical point about money in general. Abstract concepts don't need 'the'.",
       },
     ],
     studyContent: {
@@ -371,13 +461,19 @@ export const gloriaErrorPatterns: ErrorPattern[] = [
     category: "tense",
     name: "Tense Consistency",
     priority: "HIGH",
-    count: 2,
+    count: 3,
     conversationCount: 1,
     shortExplanation:
-      "When telling a story about the past, keep all verbs in past tense. Switching to present tense mid-story is a common habit to watch for.",
+      "When telling a story about the past, keep all verbs in past tense. Also, use present tense 'have' (not past 'got') when describing something that's still true now.",
     quickTip:
-      "Telling a story? Pick past tense and stick with it. Only switch to present for things that are still true right now.",
+      "Telling a story? Pick past tense and stick with it. Describing something current? Use present tense.",
     examples: [
+      {
+        incorrect: "I actually got a friend",
+        correct: "I actually have a friend",
+        context:
+          "You still have this friend now, so use present tense 'have', not past tense 'got'.",
+      },
       {
         incorrect: "there was a time we hang out",
         correct: "there was a time we hung out",
@@ -436,18 +532,24 @@ export const gloriaErrorPatterns: ErrorPattern[] = [
     category: "singular-plural",
     name: "Singular / Plural Agreement",
     priority: "MEDIUM",
-    count: 1,
+    count: 2,
     conversationCount: 1,
     shortExplanation:
-      "Pointer words like 'this/that' (singular) and 'these/those' (plural) must match the noun they point to.",
+      "Two patterns: (1) pointer words like 'this/that' (singular) and 'these/those' (plural) must match the noun, and (2) some compound nouns keep the plural form, like 'drinks menu'.",
     quickTip:
-      "Before you say 'this' or 'these', check: is the noun singular or plural? One skill = this skill. Multiple skills = these skills.",
+      "Before you say 'this' or 'these', check: is the noun singular or plural? Also, learn fixed expressions like 'drinks menu' and 'sports car'.",
     examples: [
       {
         incorrect: "develop this, uh, money skills",
         correct: "develop these money skills",
         context:
           "'Skills' is plural, so the pointer word must be 'these' (plural), not 'this' (singular).",
+      },
+      {
+        incorrect: "the drink menu",
+        correct: "the drinks menu",
+        context:
+          "'Drinks menu' is a fixed expression -- 'drinks' stays plural because it refers to a list of multiple drinks.",
       },
     ],
     studyContent: {
