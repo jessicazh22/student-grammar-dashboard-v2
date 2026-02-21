@@ -26,8 +26,11 @@ export function DashboardHeader({
         </div>
         <p className="text-sm text-muted-foreground leading-relaxed max-w-lg">
           Hi {studentName} -- here are your speaking patterns from{" "}
-          {totalConversations} recorded conversations. Focus on one pattern at a
-          time.
+          {totalConversations} recorded{" "}
+          {totalConversations === 1 ? "conversation" : "conversations"}.{" "}
+          {totalConversations === 1
+            ? "This is an early preview -- explore your transcript and let us know what you think!"
+            : "Focus on one pattern at a time."}
         </p>
       </div>
       <div className="flex items-center gap-3">
