@@ -173,9 +173,11 @@ function ErrorPatternRow({
 export function ErrorPatterns({
   patterns,
   onStudy,
+  layout = "vertical",
 }: {
   patterns: ErrorPattern[]
   onStudy: (pattern: ErrorPattern) => void
+  layout?: "vertical" | "horizontal"
 }) {
   const totalErrors = patterns.reduce((sum, p) => sum + p.count, 0)
 
@@ -186,7 +188,13 @@ export function ErrorPatterns({
           Pattern Breakdown
         </CardTitle>
       </CardHeader>
-      <CardContent className="space-y-2">
+      <CardContent
+        className={cn(
+          layout === "horizontal"
+            ? "grid grid-cols-1 md:grid-cols-2 gap-3"
+            : "space-y-2"
+        )}
+      >
         {patterns.map((pattern, i) => (
           <ErrorPatternRow
             key={pattern.id}
