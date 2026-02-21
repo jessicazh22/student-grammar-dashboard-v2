@@ -20,6 +20,8 @@ export const gloriaTranscript: Transcript = {
   id: "gloria_money_001",
   title: "Money Management Habit",
   date: "2026-02-18",
+  prompt:
+    "Describe a good habit your friend has, and you want to develop. You should say:\n- Who your friend is\n- What habit he or she has\n- How you know it is a good habit\n- And explain why you want to develop this habit",
   content: gloriaMoneyText,
   score: 68,
   errors: [
