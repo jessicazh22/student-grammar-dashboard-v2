@@ -11,6 +11,7 @@ import {
   Filter,
   Lightbulb,
   GitFork,
+  MessageSquareText,
 } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -408,6 +409,23 @@ export function TranscriptViewer({
               Next
               <ChevronRight className="h-3.5 w-3.5" />
             </button>
+          </div>
+        )}
+
+        {/* Prompt card */}
+        {transcript.prompt && (
+          <div className="mb-4 rounded-lg border border-primary/15 bg-primary/5 px-4 py-3">
+            <div className="flex items-start gap-2.5">
+              <MessageSquareText className="h-4 w-4 text-primary mt-0.5 shrink-0" />
+              <div>
+                <p className="text-[11px] font-semibold uppercase tracking-wider text-primary mb-1.5">
+                  Speaking Prompt
+                </p>
+                <p className="text-sm text-foreground leading-relaxed whitespace-pre-line">
+                  {transcript.prompt}
+                </p>
+              </div>
+            </div>
           </div>
         )}
 

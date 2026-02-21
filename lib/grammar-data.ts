@@ -71,6 +71,7 @@ export interface Transcript {
   id: string
   title: string
   date: string
+  prompt?: string
   content: string
   errors: TranscriptError[]
   score: number
