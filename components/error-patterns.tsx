@@ -56,7 +56,7 @@ function ErrorPatternRow({
       <button
         type="button"
         onClick={() => setExpanded(!expanded)}
-        className="flex w-full items-center gap-4 p-4 text-left cursor-pointer"
+        className="flex w-full items-center gap-3 sm:gap-4 p-3 sm:p-4 text-left cursor-pointer"
         aria-expanded={expanded}
       >
         <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary font-bold text-sm tabular-nums">
@@ -103,7 +103,7 @@ function ErrorPatternRow({
       </button>
 
       {expanded && (
-        <div className="border-t border-border px-4 pb-3 pt-2.5 space-y-3 animate-in slide-in-from-top-1 fade-in-0 duration-200">
+        <div className="border-t border-border px-3 sm:px-4 pb-3 pt-2.5 space-y-3 animate-in slide-in-from-top-1 fade-in-0 duration-200">
           <p className="text-sm text-muted-foreground leading-relaxed">
             {pattern.shortExplanation}
           </p>
@@ -133,12 +133,12 @@ function ErrorPatternRow({
                 key={i}
                 className="rounded-lg border border-border bg-muted/30 p-3 space-y-1.5"
               >
-                <div className="flex items-center gap-3 flex-wrap">
-                  <span className="text-sm line-through text-destructive/80 bg-destructive/5 px-2 py-0.5 rounded">
+                <div className="flex items-start sm:items-center gap-2 sm:gap-3 flex-wrap">
+                  <span className="text-xs sm:text-sm line-through text-destructive/80 bg-destructive/5 px-2 py-0.5 rounded break-all">
                     {ex.incorrect}
                   </span>
-                  <ArrowRight className="h-3.5 w-3.5 text-muted-foreground shrink-0" />
-                  <span className="text-sm text-accent bg-accent/10 px-2 py-0.5 rounded font-medium">
+                  <ArrowRight className="h-3.5 w-3.5 text-muted-foreground shrink-0 mt-1 sm:mt-0" />
+                  <span className="text-xs sm:text-sm text-accent bg-accent/10 px-2 py-0.5 rounded font-medium break-all">
                     {ex.correct}
                   </span>
                 </div>

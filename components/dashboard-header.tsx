@@ -33,31 +33,31 @@ export function DashboardHeader({
             : "Focus on one pattern at a time."}
         </p>
       </div>
-      <div className="flex items-center gap-3">
-        <div className="flex flex-col items-center rounded-xl border border-border bg-card px-4 py-3 min-w-[80px]">
+      <div className="grid grid-cols-3 gap-2 sm:flex sm:items-center sm:gap-3">
+        <div className="flex flex-col items-center rounded-xl border border-border bg-card px-3 py-2.5 sm:px-4 sm:py-3 sm:min-w-[80px]">
           <MessageSquare className="h-3.5 w-3.5 text-muted-foreground mb-1" />
-          <span className="text-xl font-bold text-foreground tabular-nums">
+          <span className="text-lg sm:text-xl font-bold text-foreground tabular-nums">
             {totalConversations}
           </span>
-          <span className="text-[10px] font-medium text-muted-foreground uppercase tracking-wider">
+          <span className="text-[9px] sm:text-[10px] font-medium text-muted-foreground uppercase tracking-wider">
             Analysed
           </span>
         </div>
-        <div className="flex flex-col items-center rounded-xl border border-border bg-card px-4 py-3 min-w-[80px]">
+        <div className="flex flex-col items-center rounded-xl border border-border bg-card px-3 py-2.5 sm:px-4 sm:py-3 sm:min-w-[80px]">
           <AlertCircle className="h-3.5 w-3.5 text-muted-foreground mb-1" />
-          <span className="text-xl font-bold text-foreground tabular-nums">
+          <span className="text-lg sm:text-xl font-bold text-foreground tabular-nums">
             {totalErrors}
           </span>
-          <span className="text-[10px] font-medium text-muted-foreground uppercase tracking-wider">
+          <span className="text-[9px] sm:text-[10px] font-medium text-muted-foreground uppercase tracking-wider">
             Errors
           </span>
         </div>
-        <div className="flex flex-col items-center rounded-xl border border-border bg-card px-4 py-3 min-w-[80px]">
+        <div className="flex flex-col items-center rounded-xl border border-border bg-card px-3 py-2.5 sm:px-4 sm:py-3 sm:min-w-[80px]">
           <Layers className="h-3.5 w-3.5 text-muted-foreground mb-1" />
-          <span className="text-xl font-bold text-foreground tabular-nums">
+          <span className="text-lg sm:text-xl font-bold text-foreground tabular-nums">
             {totalPatterns}
           </span>
-          <span className="text-[10px] font-medium text-muted-foreground uppercase tracking-wider">
+          <span className="text-[9px] sm:text-[10px] font-medium text-muted-foreground uppercase tracking-wider">
             Patterns
           </span>
         </div>
