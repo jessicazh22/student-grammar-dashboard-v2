@@ -189,11 +189,7 @@ export function ErrorPatterns({
         </CardTitle>
       </CardHeader>
       <CardContent
-        className={cn(
-          layout === "horizontal"
-            ? "grid grid-cols-1 md:grid-cols-2 gap-3"
-            : "space-y-2"
-        )}
+        className="space-y-2"
       >
         {patterns.map((pattern, i) => (
           <ErrorPatternRow
