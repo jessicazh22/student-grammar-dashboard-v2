@@ -9,7 +9,7 @@ import { TranscriptViewer } from "@/components/transcript-viewer"
 import { TranscriptList } from "@/components/transcript-list"
 import { StudyModal } from "@/components/study-modal"
 import { ErrorPatterns } from "@/components/error-patterns"
-import { AccuracyScore, PatternBreakdown } from "@/components/score-ring"
+import { AccuracyScore, PatternBreakdownWide } from "@/components/score-ring"
 import { LearningCards } from "@/components/learning-cards"
 import {
   gloriaTranscript,
@@ -101,7 +101,7 @@ export default function GloriaDashboard() {
               </div>
               <div className="lg:col-span-3 space-y-6">
                 <TranscriptViewer transcript={gloriaTranscript} />
-                <PatternBreakdown patterns={gloriaErrorPatterns} />
+                <PatternBreakdownWide patterns={gloriaErrorPatterns} />
               </div>
             </div>
           </TabsContent>
