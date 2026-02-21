@@ -103,7 +103,7 @@ function ErrorPatternRow({
       </button>
 
       {expanded && (
-        <div className="border-t border-border px-4 pb-4 pt-3 space-y-4 animate-in slide-in-from-top-1 fade-in-0 duration-200">
+        <div className="border-t border-border px-4 pb-3 pt-2.5 space-y-3 animate-in slide-in-from-top-1 fade-in-0 duration-200">
           <p className="text-sm text-muted-foreground leading-relaxed">
             {pattern.shortExplanation}
           </p>
@@ -173,15 +173,17 @@ function ErrorPatternRow({
 export function ErrorPatterns({
   patterns,
   onStudy,
+  layout = "vertical",
 }: {
   patterns: ErrorPattern[]
   onStudy: (pattern: ErrorPattern) => void
+  layout?: "vertical" | "horizontal"
 }) {
   const totalErrors = patterns.reduce((sum, p) => sum + p.count, 0)
 
   return (
     <Card className="border-border bg-card">
-      <CardHeader className="pb-3">
+      <CardHeader className="pb-2">
         <CardTitle className="text-base font-semibold text-foreground">
           Pattern Breakdown
         </CardTitle>
