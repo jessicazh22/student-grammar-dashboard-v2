@@ -9,7 +9,7 @@ import { TranscriptViewer } from "@/components/transcript-viewer"
 import { TranscriptList } from "@/components/transcript-list"
 import { StudyModal } from "@/components/study-modal"
 import { ErrorPatterns } from "@/components/error-patterns"
-import { PatternBreakdown } from "@/components/score-ring"
+import { AccuracyScore, PatternBreakdown } from "@/components/score-ring"
 import { LearningCards } from "@/components/learning-cards"
 import {
   gloriaTranscript,
@@ -92,6 +92,7 @@ export default function GloriaDashboard() {
                   activeId={activeTranscript}
                   onSelect={setActiveTranscript}
                 />
+                <AccuracyScore patterns={gloriaErrorPatterns} />
                 <ErrorPatterns
                   patterns={gloriaErrorPatterns}
                   onStudy={setStudyPattern}
