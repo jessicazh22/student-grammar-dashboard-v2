@@ -321,7 +321,7 @@ export const gloriaErrorPatterns: ErrorPattern[] = [
     count: 4,
     conversationCount: 1,
     shortExplanation:
-      "Four patterns to watch: (1) after a preposition, always use -ing; (2) 'gonna' needs a helper verb like 'are' or 'will'; (3) 'rather than' + -ing keeps sentences parallel.",
+      "You used verbs in the wrong form a few times. Here are the rules: (1) After a preposition like 'at', 'for', or 'about', always add -ing to the verb (e.g. 'good at managing', not 'good at manage'). (2) 'Gonna' is informal for 'going to', but it still needs a helper verb before it -- say 'we're gonna' or 'I'm gonna', never just 'we gonna'. (3) After 'rather than', use the -ing form to keep the sentence flowing smoothly (e.g. 'rather than letting', not 'rather than let').",
     quickTip:
       "See a preposition (at, for, about)? The next verb must end in -ing. Using 'gonna'? Make sure there's a helper verb before it.",
     examples: [
@@ -398,7 +398,7 @@ export const gloriaErrorPatterns: ErrorPattern[] = [
     count: 1,
     conversationCount: 1,
     shortExplanation:
-      "Using 'the' with general concepts or categories where no article is needed. Drop 'the' when you mean something in general, not a specific one.",
+      "You added 'the' before a general category where it isn't needed. In English, when you're talking about something in general -- not one specific thing -- you drop 'the'. For example, 'order drinks' means any drinks, but 'order the drinks' means specific drinks you've already mentioned. A quick test: does your listener know exactly which one you're referring to? If not, you probably don't need 'the'.",
     quickTip:
       "Ask yourself: does my listener already know exactly which one I mean? If you're talking about the general concept, drop 'the'.",
     examples: [
@@ -466,7 +466,7 @@ export const gloriaErrorPatterns: ErrorPattern[] = [
     count: 3,
     conversationCount: 1,
     shortExplanation:
-      "When telling a story about the past, keep all verbs in past tense. Also, use present tense 'have' (not past 'got') when describing something that's still true now.",
+      "You switched between past and present tense in the middle of your story. In English, once you start telling a past story, you need to keep all your verbs in past tense -- 'hung out' not 'hang out', 'realised' not 'realise'. The one exception: if something is still true right now (like you still have that friend), use present tense for that part ('I have a friend', not 'I got a friend').",
     quickTip:
       "Telling a story? Pick past tense and stick with it. Describing something current? Use present tense.",
     examples: [
@@ -537,7 +537,7 @@ export const gloriaErrorPatterns: ErrorPattern[] = [
     count: 2,
     conversationCount: 1,
     shortExplanation:
-      "Two patterns: (1) pointer words like 'this/that' (singular) and 'these/those' (plural) must match the noun, and (2) some compound nouns keep the plural form, like 'drinks menu'.",
+      "Words like 'this' and 'these' need to match the noun they point to. 'This' is for one thing ('this skill'), 'these' is for more than one ('these skills'). It's easy to lose track when filler words like 'um' separate them. Also, some compound nouns keep the plural -- 'drinks menu' (not 'drink menu') is a fixed expression because the menu lists multiple drinks. Other examples: 'sports car', 'arms dealer'.",
     quickTip:
       "Before you say 'this' or 'these', check: is the noun singular or plural? Also, learn fixed expressions like 'drinks menu' and 'sports car'.",
     examples: [
