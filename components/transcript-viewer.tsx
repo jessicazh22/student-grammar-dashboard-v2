@@ -7,12 +7,18 @@ import {
   X,
   ChevronLeft,
   ChevronRight,
+  ChevronDown,
   BookOpen,
   Filter,
   Lightbulb,
   GitFork,
   MessageSquareText,
 } from "lucide-react"
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import {
@@ -412,21 +418,26 @@ export function TranscriptViewer({
           </div>
         )}
 
-        {/* Prompt card */}
+        {/* Collapsible prompt card */}
         {transcript.prompt && (
-          <div className="mb-4 rounded-lg border border-primary/15 bg-primary/5 px-4 py-3">
-            <div className="flex items-start gap-2.5">
-              <MessageSquareText className="h-4 w-4 text-primary mt-0.5 shrink-0" />
-              <div>
-                <p className="text-[11px] font-semibold uppercase tracking-wider text-primary mb-1.5">
-                  Speaking Prompt
-                </p>
-                <p className="text-sm text-foreground leading-relaxed whitespace-pre-line">
+          <Collapsible defaultOpen={false} className="mb-4">
+            <div className="rounded-lg border border-primary/15 bg-primary/5 px-4 py-3">
+              <CollapsibleTrigger className="flex w-full items-center justify-between gap-2 cursor-pointer group">
+                <div className="flex items-center gap-2.5">
+                  <MessageSquareText className="h-4 w-4 text-primary shrink-0" />
+                  <p className="text-[11px] font-semibold uppercase tracking-wider text-primary">
+                    Speaking Prompt
+                  </p>
+                </div>
+                <ChevronDown className="h-4 w-4 text-primary transition-transform duration-200 group-data-[state=open]:rotate-180" />
+              </CollapsibleTrigger>
+              <CollapsibleContent className="overflow-hidden data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0">
+                <p className="text-sm text-foreground leading-relaxed whitespace-pre-line mt-2.5 ml-6.5">
                   {transcript.prompt}
                 </p>
-              </div>
+              </CollapsibleContent>
             </div>
-          </div>
+          </Collapsible>
         )}
 
         {/* Annotated transcript */}
