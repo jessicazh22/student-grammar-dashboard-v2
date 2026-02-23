@@ -356,16 +356,30 @@ export const gloriaMovieTranscript: Transcript = {
     },
     {
       id: "GM3b",
-      startIndex: gloriaMovieText.indexOf("hang with friends all day"),
+      startIndex: gloriaMovieText.indexOf("hang with friends"),
       endIndex:
-        gloriaMovieText.indexOf("hang with friends all day") +
-        "hang with friends all day".length,
+        gloriaMovieText.indexOf("hang with friends") +
+        "hang with friends".length,
       category: "verb-patterns",
-      original: "hang with friends all day",
-      correction: "hang out with her friends all day long",
+      original: "hang with friends",
+      correction: "hang out with her friends",
       explanation:
         "The phrasal verb is 'hang out' -- dropping 'out' changes the meaning. Phrasal verbs are two-part teams, so make sure both parts are there!",
       rule: "Phrasal verbs need both parts: 'hang out', 'get into', 'look after'.",
+    },
+    {
+      id: "GM3c",
+      startIndex: gloriaMovieText.indexOf("all day in high school"),
+      endIndex:
+        gloriaMovieText.indexOf("all day in high school") +
+        "all day".length,
+      category: "style",
+      kind: "suggestion",
+      original: "all day",
+      correction: "all day long",
+      explanation:
+        "'All day long' is a more natural and emphatic way to say this in English. It adds a bit of rhythm and emphasis -- like you really mean the whole day!",
+      rule: "'All day long' sounds more natural and emphatic than just 'all day' in most spoken contexts.",
     },
     {
       id: "GM4",
@@ -464,12 +478,12 @@ export const gloriaMovieTranscript: Transcript = {
       endIndex:
         gloriaMovieText.indexOf("studying hard and dream comes true") +
         "studying hard and dream comes true".length,
-      category: "verb-patterns",
+      category: "tense",
       original: "studying hard and dream comes true",
       correction: "studying hard and dreams coming true",
       explanation:
-        "Both sides of 'and' should match in form. You started with 'studying' (-ing), so the other side needs -ing too: 'dreams coming true'. Think of it like a balance -- both sides should look the same.",
-      rule: "Both sides of 'and' should match: -ing + -ing, or 'to' + 'to'. Keep it balanced!",
+        "You started with 'studying' (-ing form), so the other side of 'and' needs to match: 'dreams coming true'. 'Comes' is present tense, but 'coming' keeps it consistent with the -ing form you already used.",
+      rule: "Both sides of 'and' need to match in form: -ing + -ing, or 'to' + 'to'. Keep it balanced!",
     },
     {
       id: "GM10",
@@ -529,12 +543,12 @@ export const gloriaMovieTranscript: Transcript = {
       endIndex:
         gloriaMovieText.indexOf("you might got laughed at") +
         "you might got laughed at".length,
-      category: "verb-patterns",
+      category: "tense",
       original: "you might got laughed at",
       correction: "you might get laughed at",
       explanation:
-        "After modal verbs (might, could, should, will), always use the base form of the verb. So it's 'might get' (not 'might got'). The modal already carries the meaning -- the verb just needs to be in its simplest form.",
-      rule: "Modal + base verb: might get, could see, should go, will be. Never modal + past form.",
+        "'Got' is past tense, but after 'might' the verb needs to be in its base form: 'get'. Think of it like this -- the modal (might) already carries the meaning, so the verb stays simple. Same idea as 'can' needing 'could' in past stories.",
+      rule: "After modals (might, could, should, will), always use the base form: might get, could see, should go.",
     },
     {
       id: "GM13",
@@ -605,7 +619,7 @@ export const gloriaErrorPatterns: ErrorPattern[] = [
     category: "tense",
     name: "Tense & Time",
     priority: "HIGH",
-    count: 11,
+    count: 13,
     conversationCount: 2,
     shortExplanation:
       "Your most common pattern! Once you start a past story, every verb needs its past form:\n\n- 'decided' not 'decide'\n- 'wanted' not 'want'\n- 'didn't' not 'don't'\n- 'could' not 'can'\n- 'got' not 'get'\n\nOnly switch to present for things still true now -- like 'I have a friend' (you still have them). You already use past tense correctly a lot -- this is just about staying consistent the whole way through.",
@@ -660,10 +674,22 @@ export const gloriaErrorPatterns: ErrorPattern[] = [
         context:
           "Past story: 'get' becomes 'got'.",
       },
+      {
+        incorrect: "you might got laughed at",
+        correct: "you might get laughed at",
+        context:
+          "After 'might', use the base form: 'get', not 'got'.",
+      },
+      {
+        incorrect: "studying hard and dream comes true",
+        correct: "studying hard and dreams coming true",
+        context:
+          "'Comes' is present -- match the -ing form you already started with: 'coming'.",
+      },
     ],
     studyContent: {
       fullExplanation:
-        "This came up 11 times across your two recordings -- it's your most common pattern by far. The good news: you clearly know how past tense works -- you use it correctly plenty of times! The pattern to watch for is when a verb slips back to present tense in the middle of a past story. This includes modals too: 'can' becomes 'could', 'will' becomes 'would'.",
+        "This came up 13 times across your two recordings -- it's your most common pattern by far. The good news: you clearly know how past tense works -- you use it correctly plenty of times! The pattern to watch for is when a verb slips back to present tense in the middle of a past story. This includes modals too: 'can' becomes 'could', 'might get' not 'might got'. Also watch for mismatched forms across 'and': 'studying and coming' (not 'studying and comes').",
       tables: [
         {
           title: "Staying in Past Tense",
@@ -682,6 +708,13 @@ export const gloriaErrorPatterns: ErrorPattern[] = [
                   "Something still true now",
                   "OK to use present",
                   "I realised that I waste a lot of money (still true).",
+                ],
+              },
+              {
+                cells: [
+                  "After a modal (might, could, should...)",
+                  "Base form, not past",
+                  "might get (not 'might got'), could see (not 'could saw')",
                 ],
               },
               {
@@ -706,11 +739,11 @@ export const gloriaErrorPatterns: ErrorPattern[] = [
     id: "g2",
     category: "verb-patterns",
     name: "Verb Structure",
-    priority: "HIGH",
-    count: 8,
+    priority: "MEDIUM",
+    count: 6,
     conversationCount: 2,
     shortExplanation:
-      "A few verb-form rules keep coming up. Here are the key ones:\n\n- After prepositions (at, for, about), always add -ing -- 'good at managing'\n- After modals (might, could), always base form -- 'might get', not 'might got'\n- Finish your phrasal verbs -- 'hang out', not just 'hang'; 'get into', not 'get in'\n- 'Gonna' needs a helper verb before it -- 'we're gonna', not 'we gonna'\n- Both sides of 'and' should match -- 'studying hard and dreams coming true'\n\nThese click fast once you start spotting them!",
+      "A few verb-form rules keep coming up. Here are the key ones:\n\n- After prepositions (at, for, about), always add -ing -- 'good at managing'\n\n- Finish your phrasal verbs -- 'hang out', not just 'hang'; 'get into', not 'get in'\n\n- 'Gonna' needs a helper verb before it -- 'we're gonna', not 'we gonna'\n\n- After 'rather than', use the -ing form -- 'rather than letting'\n\nThese click fast once you start spotting them!",
     quickTip:
       "Quick check: what word comes right before the verb? A preposition = add -ing. A modal = use base form. A phrasal verb = make sure it has both parts.",
     examples: [
@@ -727,20 +760,8 @@ export const gloriaErrorPatterns: ErrorPattern[] = [
           "'Gonna' needs a helper verb (are/will). Or switch to 'would' for past habits.",
       },
       {
-        incorrect: "studying hard and dream comes true",
-        correct: "studying hard and dreams coming true",
-        context:
-          "Both sides of 'and' should match -- gerund + gerund.",
-      },
-      {
-        incorrect: "you might got laughed at",
-        correct: "you might get laughed at",
-        context:
-          "After 'might' (a modal), always use the base form: 'get', not 'got'.",
-      },
-      {
-        incorrect: "hang with friends all day",
-        correct: "hang out with her friends all day long",
+        incorrect: "hang with friends",
+        correct: "hang out with her friends",
         context:
           "The phrasal verb is 'hang out' -- dropping 'out' changes the meaning.",
       },
@@ -759,7 +780,7 @@ export const gloriaErrorPatterns: ErrorPattern[] = [
     ],
     studyContent: {
       fullExplanation:
-        "Verbs in English change form depending on what comes right before them. This came up 8 times across your recordings, but it's actually a few different rules bundled together. Once you learn to spot the word before the verb, the right form becomes much easier to pick.",
+        "Verbs in English change form depending on what comes right before them. This came up 6 times across your recordings. Once you learn to spot the word before the verb, the right form becomes much easier to pick.",
       tables: [
         {
           title: "Quick Decision Guide",
@@ -778,13 +799,6 @@ export const gloriaErrorPatterns: ErrorPattern[] = [
                   "Gonna (informal 'going to')",
                   "helper verb + gonna + base verb",
                   "we're gonna order",
-                ],
-              },
-              {
-                cells: [
-                  "A modal verb (might, could, should...)",
-                  "base form",
-                  "might get, could see",
                 ],
               },
               {
