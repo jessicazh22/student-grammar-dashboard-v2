@@ -49,7 +49,7 @@ export function LearningCards({ patterns }: { patterns: ErrorPattern[] }) {
         >
           <div
             className={cn(
-              "rounded-xl border p-5 text-center min-h-[140px] flex flex-col items-center justify-center transition-all duration-300",
+              "rounded-xl border p-4 sm:p-5 text-center min-h-[120px] sm:min-h-[140px] flex flex-col items-center justify-center transition-all duration-300",
               flipped
                 ? "bg-success/5 border-success/20"
                 : "bg-primary/5 border-primary/10"
