@@ -55,13 +55,13 @@ export function TrendChart({
   return (
     <Card className="border-border bg-card">
       <CardHeader className="pb-2">
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <CardTitle className="text-base font-semibold text-foreground">
               Progress Over Time
             </CardTitle>
           </div>
-          <div className="flex rounded-lg bg-muted p-0.5">
+          <div className="flex rounded-lg bg-muted p-0.5 self-start sm:self-auto">
             <button
               type="button"
               onClick={() => setView("overall")}
@@ -93,7 +93,7 @@ export function TrendChart({
         {view === "overall" ? (
           <ChartContainer
             config={overallChartConfig}
-            className="h-[220px] w-full"
+            className="h-[180px] sm:h-[220px] w-full"
           >
             <AreaChart
               data={overallData}
@@ -159,7 +159,7 @@ export function TrendChart({
         ) : (
           <ChartContainer
             config={categoryChartConfig}
-            className="h-[220px] w-full"
+            className="h-[180px] sm:h-[220px] w-full"
           >
             <BarChart
               data={categoryData}

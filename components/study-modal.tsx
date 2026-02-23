@@ -30,7 +30,7 @@ export function StudyModal({
   return (
     <div
       ref={overlayRef}
-      className="fixed inset-0 z-50 flex items-start justify-center bg-foreground/40 backdrop-blur-sm pt-8 pb-8 px-4 overflow-y-auto"
+      className="fixed inset-0 z-50 flex items-start justify-center bg-foreground/40 backdrop-blur-sm pt-4 sm:pt-8 pb-4 sm:pb-8 px-3 sm:px-4 overflow-y-auto"
       onClick={(e) => {
         if (e.target === overlayRef.current) onClose()
       }}
@@ -43,7 +43,7 @@ export function StudyModal({
         className="relative w-full max-w-2xl rounded-2xl border border-border bg-card shadow-xl animate-in fade-in-0 zoom-in-95 duration-200"
       >
         {/* Header */}
-        <div className="sticky top-0 z-10 flex items-start justify-between gap-4 rounded-t-2xl border-b border-border bg-card px-6 py-5">
+        <div className="sticky top-0 z-10 flex items-start justify-between gap-3 rounded-t-2xl border-b border-border bg-card px-4 py-4 sm:px-6 sm:py-5">
           <div>
             <h2 className="text-lg font-semibold text-foreground">
               {pattern.name}
@@ -60,7 +60,7 @@ export function StudyModal({
         </div>
 
         {/* Body */}
-        <div className="px-6 py-6 space-y-8">
+        <div className="px-4 py-4 sm:px-6 sm:py-6 space-y-6 sm:space-y-8">
           {/* Full explanation */}
           <div>
             <h3 className="text-sm font-semibold text-foreground mb-2">
@@ -162,16 +162,16 @@ export function StudyModal({
               {pattern.examples.map((ex, i) => (
                 <div
                   key={i}
-                  className="rounded-lg border border-border bg-muted/20 px-4 py-3"
+                  className="rounded-lg border border-border bg-muted/20 px-3 py-2.5 sm:px-4 sm:py-3"
                 >
                   <div className="flex items-start gap-2 flex-wrap">
-                    <span className="text-sm line-through text-destructive/80 bg-destructive/5 px-2 py-0.5 rounded">
+                    <span className="text-xs sm:text-sm line-through text-destructive/80 bg-destructive/5 px-2 py-0.5 rounded break-all">
                       {ex.incorrect}
                     </span>
-                    <span className="text-muted-foreground text-sm" aria-hidden="true">
+                    <span className="text-muted-foreground text-xs sm:text-sm" aria-hidden="true">
                       {"\u2192"}
                     </span>
-                    <span className="text-sm text-accent bg-accent/10 px-2 py-0.5 rounded font-medium">
+                    <span className="text-xs sm:text-sm text-accent bg-accent/10 px-2 py-0.5 rounded font-medium break-all">
                       {ex.correct}
                     </span>
                   </div>

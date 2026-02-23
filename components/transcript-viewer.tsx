@@ -44,7 +44,7 @@ function ErrorPopover({
   const hasAlternatives = error.alternatives && error.alternatives.length > 0
 
   return (
-    <div className="w-[320px] space-y-3">
+    <div className="w-[280px] sm:w-[320px] space-y-3">
       {/* Header badge */}
       <div className="flex items-center gap-2">
         {isSuggestion ? (
@@ -325,21 +325,21 @@ export function TranscriptViewer({
               })}
             </p>
           </div>
-          <div className="flex items-center gap-3">
-            <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
-              <div className="h-2.5 w-2.5 rounded-full bg-destructive/60" />
+          <div className="flex items-center gap-2 sm:gap-3 flex-wrap">
+            <div className="flex items-center gap-1.5 text-[11px] sm:text-xs text-muted-foreground">
+              <div className="h-2 w-2 sm:h-2.5 sm:w-2.5 rounded-full bg-destructive/60" />
               {activeErrors.filter(e => e.kind !== "suggestion").length} errors
             </div>
-            <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
-              <div className="h-2.5 w-2.5 rounded-full bg-suggestion/60" />
+            <div className="flex items-center gap-1.5 text-[11px] sm:text-xs text-muted-foreground">
+              <div className="h-2 w-2 sm:h-2.5 sm:w-2.5 rounded-full bg-suggestion/60" />
               {activeErrors.filter(e => e.kind === "suggestion").length} suggestions
             </div>
-            <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
-              <div className="h-2.5 w-2.5 rounded-full bg-success" />
+            <div className="flex items-center gap-1.5 text-[11px] sm:text-xs text-muted-foreground">
+              <div className="h-2 w-2 sm:h-2.5 sm:w-2.5 rounded-full bg-success" />
               {totalResolved} resolved
             </div>
-            <div className="h-4 w-px bg-border" />
-            <div className="text-xs font-medium text-foreground tabular-nums">
+            <div className="hidden sm:block h-4 w-px bg-border" />
+            <div className="text-[11px] sm:text-xs font-medium text-foreground tabular-nums">
               {totalOriginal > 0
                 ? Math.round((totalResolved / totalOriginal) * 100)
                 : 100}
@@ -441,7 +441,7 @@ export function TranscriptViewer({
         )}
 
         {/* Annotated transcript */}
-        <div className="rounded-xl border border-border bg-muted/20 p-5 text-sm leading-7 text-foreground font-sans whitespace-pre-wrap">
+        <div className="rounded-xl border border-border bg-muted/20 p-3 sm:p-5 text-sm leading-7 text-foreground font-sans whitespace-pre-wrap">
           {segments.map((segment, i) => {
             if (segment.type === "text") {
               return <Fragment key={i}>{segment.content}</Fragment>
