@@ -1013,6 +1013,78 @@ export const gloriaErrorPatterns: ErrorPattern[] = [
 
 ]
 
+// ─── Practice exercises (g1: Tense & Time only for now) ───
+
+export type FillInBlankQuestion = {
+  sentence: string        // Use ___ for the blank
+  options: string[]        // 3 choices
+  correctIndex: number     // index of correct option
+  explanation: string
+}
+
+export type CorrectionPrompt = {
+  original: string
+  corrected: string        // bold words wrapped in **word**
+  tip: string
+}
+
+export type RepeatSentence = {
+  sentence: string
+}
+
+export type PatternExercises = {
+  patternId: string
+  fillInBlanks: FillInBlankQuestion[]
+  corrections: CorrectionPrompt[]
+  repeatAfterMe: RepeatSentence[]
+}
+
+export const gloriaExercises: Record<string, PatternExercises> = {
+  g1: {
+    patternId: "g1",
+    fillInBlanks: [
+      {
+        sentence: "She ___ she wanted to study hard.",
+        options: ["decide", "decided", "decides"],
+        correctIndex: 1,
+        explanation:
+          "Past story = past tense. 'Decided' is the past form of 'decide'.",
+      },
+      {
+        sentence: "There was a time we ___ out together.",
+        options: ["hang", "hung", "hangs"],
+        correctIndex: 1,
+        explanation:
+          "'There was a time' signals past, so you need 'hung' (past of 'hang').",
+      },
+      {
+        sentence: "In that movie, I ___ that real friends support each other.",
+        options: ["realise", "realised", "realising"],
+        correctIndex: 1,
+        explanation:
+          "You watched the movie in the past, so 'realised' is the right form.",
+      },
+    ],
+    corrections: [
+      {
+        original: "She decide she want to study hard.",
+        corrected: "She **decided** she **wanted** to study hard.",
+        tip: "Both verbs need past tense: decide -> decided, want -> wanted.",
+      },
+      {
+        original: "He looked down on her and don't believe her.",
+        corrected: "He looked down on her and **didn't** believe her.",
+        tip: "'Looked' is already past -- 'don't' needs to match: didn't.",
+      },
+    ],
+    repeatAfterMe: [
+      { sentence: "She decided she wanted to leave early." },
+      { sentence: "I realised I had made a mistake." },
+      { sentence: "They could see that something had changed." },
+    ],
+  },
+}
+
 // ─── Derive per-transcript patterns from inline errors ───
 // Takes a transcript and returns only the aggregated patterns
 // that appear in that transcript's errors, with counts scoped
