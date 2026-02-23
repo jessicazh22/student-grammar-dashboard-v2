@@ -918,3 +918,34 @@ export const gloriaErrorPatterns: ErrorPattern[] = [
     },
   },
 ]
+
+// ─── Derive per-transcript patterns from inline errors ───
+// Takes a transcript and returns only the aggregated patterns
+// that appear in that transcript's errors, with counts scoped
+// to that transcript.
+
+export function getPatternsForTranscript(
+  transcript: Transcript
+): ErrorPattern[] {
+  // Count errors per category in this transcript
+  const categoryCounts: Partial<Record<string, number>> = {}
+  for (const err of transcript.errors) {
+    categoryCounts[err.category] = (categoryCounts[err.category] ?? 0) + 1
+  }
+
+  // Filter and re-count the global patterns for this transcript
+  return gloriaErrorPatterns
+    .filter((p) => (categoryCounts[p.category] ?? 0) > 0)
+    .map((p) => ({
+      ...p,
+      count: categoryCounts[p.category] ?? 0,
+      conversationCount: 1,
+      // Filter examples to only those from this transcript's errors
+      examples: p.examples.filter((ex) =>
+        transcript.errors.some(
+          (e) => e.original === ex.incorrect || e.correction === ex.correct
+        )
+      ),
+    }))
+    .sort((a, b) => b.count - a.count)
+}

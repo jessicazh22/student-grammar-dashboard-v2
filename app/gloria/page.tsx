@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useMemo } from "react"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Card, CardContent } from "@/components/ui/card"
 import { BarChart3, FileText, Clock, Sparkles } from "lucide-react"
@@ -16,6 +16,7 @@ import {
   gloriaMovieTranscript,
   gloriaTranscriptList,
   gloriaErrorPatterns,
+  getPatternsForTranscript,
 } from "@/lib/gloria-data"
 import type { ErrorPattern } from "@/lib/grammar-data"
 
@@ -61,6 +62,10 @@ export default function GloriaDashboard() {
   const [studyPattern, setStudyPattern] = useState<ErrorPattern | null>(null)
 
   const activeTranscript = transcriptsMap[activeTranscriptId] ?? gloriaTranscript
+  const activePatterns = useMemo(
+    () => getPatternsForTranscript(activeTranscript),
+    [activeTranscript]
+  )
   const totalErrors = gloriaErrorPatterns.reduce((sum, p) => sum + p.count, 0)
 
   return (
@@ -99,13 +104,13 @@ export default function GloriaDashboard() {
                   activeId={activeTranscriptId}
                   onSelect={setActiveTranscriptId}
                 />
-                <AccuracyScore patterns={gloriaErrorPatterns} />
-                <LearningCards patterns={gloriaErrorPatterns} />
+                <AccuracyScore patterns={activePatterns} />
+                <LearningCards patterns={activePatterns} />
               </div>
               <div className="lg:col-span-3 space-y-6">
                 <TranscriptViewer transcript={activeTranscript} />
                 <ErrorPatterns
-                  patterns={gloriaErrorPatterns}
+                  patterns={activePatterns}
                   onStudy={setStudyPattern}
                   layout="horizontal"
                 />
