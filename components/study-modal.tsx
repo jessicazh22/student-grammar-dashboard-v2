@@ -1,9 +1,11 @@
 "use client"
 
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 import { X, AlertTriangle, Lightbulb } from "lucide-react"
 import type { ErrorPattern } from "@/lib/grammar-data"
 import { cn } from "@/lib/utils"
+import { gloriaExercises } from "@/lib/gloria-data"
+import { PracticeExercises } from "@/components/practice-exercises"
 
 export function StudyModal({
   pattern,
@@ -14,6 +16,8 @@ export function StudyModal({
 }) {
   const overlayRef = useRef<HTMLDivElement>(null)
   const contentRef = useRef<HTMLDivElement>(null)
+  const [tab, setTab] = useState<"learn" | "practice">("learn")
+  const exercises = gloriaExercises[pattern.id]
 
   useEffect(() => {
     function handleKeyDown(e: KeyboardEvent) {
@@ -43,24 +47,56 @@ export function StudyModal({
         className="relative w-full max-w-2xl rounded-2xl border border-border bg-card shadow-xl animate-in fade-in-0 zoom-in-95 duration-200"
       >
         {/* Header */}
-        <div className="sticky top-0 z-10 flex items-start justify-between gap-3 rounded-t-2xl border-b border-border bg-card px-4 py-4 sm:px-6 sm:py-5">
-          <div>
+        <div className="sticky top-0 z-10 rounded-t-2xl border-b border-border bg-card px-6 py-5">
+          <div className="flex items-start justify-between gap-4">
             <h2 className="text-lg font-semibold text-foreground">
               {pattern.name}
             </h2>
+            <button
+              type="button"
+              onClick={onClose}
+              className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg text-muted-foreground hover:bg-muted hover:text-foreground transition-colors cursor-pointer"
+              aria-label="Close"
+            >
+              <X className="h-4 w-4" />
+            </button>
           </div>
-          <button
-            type="button"
-            onClick={onClose}
-            className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg text-muted-foreground hover:bg-muted hover:text-foreground transition-colors cursor-pointer"
-            aria-label="Close"
-          >
-            <X className="h-4 w-4" />
-          </button>
+
+          {/* Learn / Practice toggle */}
+          <div className="flex rounded-lg border border-border bg-muted/30 p-0.5 mt-4">
+            <button
+              type="button"
+              onClick={() => setTab("learn")}
+              className={cn(
+                "flex-1 rounded-md px-3 py-1.5 text-sm font-medium transition-colors cursor-pointer",
+                tab === "learn"
+                  ? "bg-card text-foreground shadow-sm"
+                  : "text-muted-foreground hover:text-foreground"
+              )}
+            >
+              Learn
+            </button>
+            <button
+              type="button"
+              onClick={() => setTab("practice")}
+              className={cn(
+                "flex-1 rounded-md px-3 py-1.5 text-sm font-medium transition-colors cursor-pointer",
+                tab === "practice"
+                  ? "bg-card text-foreground shadow-sm"
+                  : "text-muted-foreground hover:text-foreground"
+              )}
+            >
+              Practice
+            </button>
+          </div>
         </div>
 
         {/* Body */}
-        <div className="px-4 py-4 sm:px-6 sm:py-6 space-y-6 sm:space-y-8">
+        <div className="px-6 py-6 space-y-8">
+          {tab === "practice" ? (
+            <PracticeExercises exercises={exercises} />
+          ) : (
+          <>
           {/* Full explanation */}
           <div>
             <h3 className="text-sm font-semibold text-foreground mb-2">
@@ -182,6 +218,8 @@ export function StudyModal({
               ))}
             </div>
           </div>
+          </>
+          )}
         </div>
       </div>
     </div>

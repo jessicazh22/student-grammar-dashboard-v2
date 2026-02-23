@@ -35,8 +35,8 @@ export const gloriaTranscript: Transcript = {
       original: "I actually got a friend",
       correction: "I actually have a friend",
       explanation:
-        "When describing a current situation -- you still have this friend -- use the present tense 'have', not the past tense 'got'. 'Got' suggests you acquired the friend in the past and is less natural here.",
-      rule: "Use 'have' for something you currently possess. Use 'got' for the moment of acquiring it.",
+        "You still have this friend right now, so you want present tense here -- 'I have a friend'. When you say 'I got a friend', it sounds like you're talking about the moment you met them. It's a really common mix-up, so don't worry -- just think: is this still true right now? If yes, go with 'have'.",
+      rule: "Still true right now? Use 'have'. Talking about when it happened? Use 'got'.",
     },
     {
       id: "G1",
@@ -48,8 +48,8 @@ export const gloriaTranscript: Transcript = {
       original: "good at manage her money",
       correction: "good at managing her money",
       explanation:
-        "After a preposition like 'at', always use the -ing form of the verb. Think of it as: preposition + verb-ing. So 'good at manage' becomes 'good at managing'.",
-      rule: "Preposition + verb = always use the -ing form (gerund).",
+        "This is a really useful rule to know! Whenever you see a preposition like 'at', 'for', or 'about', the verb right after it always needs -ing. So 'good at manage' becomes 'good at managing'. Once you get the hang of this pattern, it'll start feeling automatic.",
+      rule: "Preposition (at, for, about...) + verb = always -ing. No exceptions!",
     },
     {
       id: "G2",
@@ -61,8 +61,8 @@ export const gloriaTranscript: Transcript = {
       original: "we all gonna order",
       correction: "we would all order",
       explanation:
-        "'Gonna' is short for 'going to', but it still needs a helper verb like 'are' or 'will' before it. Without it, the sentence is missing a piece. A cleaner option: 'we would all order'.",
-      rule: "Gonna/going to needs a helper verb: we're gonna, I'm gonna, they're gonna.",
+        "'Gonna' is short for 'going to', but it still needs a helper verb before it -- like 'are' or 'will'. Without it, the sentence feels incomplete. A cleaner option for past habits: 'we would all order'.",
+      rule: "Always pair 'gonna' with a helper verb: we're gonna, I'm gonna, they're gonna.",
       alternatives: [
         {
           label: "Formal version",
@@ -88,8 +88,8 @@ export const gloriaTranscript: Transcript = {
       original: "order the drinks",
       correction: "order drinks",
       explanation:
-        "When you're talking about drinks in general (not specific ones you've already mentioned), drop 'the'. Use 'the' only when both you and your listener know exactly which drinks you mean.",
-      rule: "General categories don't need 'the': order drinks, buy food, listen to music.",
+        "You're talking about drinks in general here, not specific ones -- so drop 'the'. Only use 'the' when you and your listener both know exactly which ones you mean.",
+      rule: "Speaking generally? No 'the': order drinks, buy food, listen to music.",
     },
     {
       id: "G4",
@@ -101,8 +101,8 @@ export const gloriaTranscript: Transcript = {
       original: "the drink menu",
       correction: "the drinks menu",
       explanation:
-        "When a noun acts as a modifier before another noun, it usually stays singular in English (e.g., 'shoe store'). But 'drinks menu' is an exception -- it's a fixed expression where 'drinks' keeps its plural form because it refers to a list of multiple drinks.",
-      rule: "Some compound nouns keep the plural: drinks menu, sports car, arms dealer. Learn these as fixed expressions.",
+        "'Drinks menu' is a fixed expression -- 'drinks' stays plural because the menu lists multiple drinks. Most compound nouns use the singular (like 'shoe store'), but this one is an exception worth remembering.",
+      rule: "Some compound nouns keep the plural: drinks menu, sports car, arms dealer -- learn these as set phrases.",
     },
     {
       id: "G4b",
@@ -114,8 +114,8 @@ export const gloriaTranscript: Transcript = {
       original: "there was a time we hang out",
       correction: "there was a time we hung out",
       explanation:
-        "'There was a time' tells your listener this happened in the past, so the next verb needs to be past tense too. 'Hang' is present; 'hung' is past.",
-      rule: "Past time marker (there was, last week, yesterday) = past tense verbs throughout.",
+        "'There was a time' tells your listener this happened in the past, so the next verb needs to match -- 'hung out' instead of 'hang out'. You already got 'was' right, so it's just about carrying that past tense through!",
+      rule: "Past time marker (there was, last week, yesterday) = keep all verbs in past tense.",
     },
     {
       id: "G5",
@@ -127,8 +127,8 @@ export const gloriaTranscript: Transcript = {
       original: "after that I just realise",
       correction: "after that I just realised",
       explanation:
-        "You're telling a story about the past, so stay in past tense. 'Realise' is present tense; 'realised' (or 'realized') is the past form you need here.",
-      rule: "Telling a past story? Keep all verbs in past tense. Only switch to present for things still true now.",
+        "You're telling a story about what happened, so stay in past tense. 'Realise' is present -- you want 'realised' here. Small switch, big difference!",
+      rule: "Past story = past verbs. 'Realise' becomes 'realised', 'decide' becomes 'decided'.",
     },
     {
       id: "G6",
@@ -140,8 +140,8 @@ export const gloriaTranscript: Transcript = {
       original: "how you gonna use it",
       correction: "how you're gonna use it",
       explanation:
-        "Same pattern as G2 -- 'gonna' needs a helper verb. Add 'are' (contracted to 're') before 'gonna', or use 'will' for a more formal version.",
-      rule: "Gonna/going to needs a helper verb: you're gonna, he's gonna, we're gonna.",
+        "Same pattern as earlier -- 'gonna' always needs a helper verb before it. Add 'you're' before 'gonna', or switch to 'will' for a more formal version.",
+      rule: "Always pair 'gonna' with a helper: you're gonna, he's gonna, we're gonna.",
       alternatives: [
         {
           label: "Casual fix",
@@ -165,38 +165,34 @@ export const gloriaTranscript: Transcript = {
       original: "develop this, uh, money skills",
       correction: "develop these money skills",
       explanation:
-        "'Skills' is plural, so the pointer word before it needs to be plural too. 'This' is for one thing; 'these' is for more than one.",
-      rule: "This/that = singular noun. These/those = plural noun. Match the pointer to the noun.",
+        "'Skills' is plural, so the pointer word needs to be plural too -- 'these skills', not 'this skills'. Easy to lose track of when there's a filler word in between!",
+      rule: "'This' = one thing. 'These' = more than one. Match the pointer to the noun.",
     },
     {
-      id: "G8",
-      startIndex: gloriaMoneyText.indexOf(
-        "rather than let the money control you"
-      ),
+      id: "G8a",
+      startIndex: gloriaMoneyText.indexOf("rather than let"),
       endIndex:
-        gloriaMoneyText.indexOf(
-          "rather than let the money control you"
-        ) + "rather than let the money control you".length,
+        gloriaMoneyText.indexOf("rather than let") +
+        "rather than let".length,
       category: "verb-patterns",
-      original: "rather than let the money control you",
-      correction: "rather than letting money control you",
+      original: "rather than let",
+      correction: "rather than letting",
       explanation:
-        "Two things here: (1) after 'rather than', use the -ing form 'letting' to keep the sentence parallel, and (2) drop 'the' before 'money' since you're talking about money as a general concept, not specific money.",
-      rule: "'Rather than' + -ing form keeps sentences parallel: 'rather than letting', 'rather than waiting'.",
-      alternatives: [
-        {
-          label: "With -ing (natural)",
-          correction: "rather than letting money control you",
-          explanation:
-            "Using 'letting' matches the flow of the sentence and drops the unnecessary 'the'. This is the most natural option.",
-        },
-        {
-          label: "With 'instead of'",
-          correction: "instead of letting money control you",
-          explanation:
-            "'Instead of' + -ing is another natural way to express the same idea.",
-        },
-      ],
+        "After 'rather than', the verb takes the -ing form to keep the sentence flowing smoothly. So 'let' becomes 'letting'.",
+      rule: "'Rather than' + -ing: 'rather than letting', 'rather than waiting', 'rather than spending'.",
+    },
+    {
+      id: "G8b",
+      startIndex: gloriaMoneyText.indexOf("the money control you"),
+      endIndex:
+        gloriaMoneyText.indexOf("the money control you") +
+        "the money control you".length,
+      category: "articles",
+      original: "the money control you",
+      correction: "money control you",
+      explanation:
+        "You're talking about money as a general concept here, not specific money -- so drop 'the'. Same rule as 'order drinks' earlier!",
+      rule: "General concepts don't need 'the': money, happiness, life, education.",
     },
     {
       id: "S1",
@@ -208,8 +204,8 @@ export const gloriaTranscript: Transcript = {
       original: "money skills",
       correction: "financial literacy",
       explanation:
-        "While 'money skills' is perfectly understandable, native speakers would more commonly say 'financial literacy', 'financial skills', or 'money management skills'. These are natural collocations that sound polished in both casual and professional contexts.",
-      rule: "Word choice: 'financial literacy' or 'financial skills' are more natural collocations than 'money skills'.",
+        "'Money skills' totally gets the point across! But if you want to sound more polished, native speakers usually say 'financial literacy' or 'money management skills'. These are set phrases you'll hear everywhere.",
+      rule: "More natural collocations: 'financial literacy', 'financial skills', or 'money management skills'.",
       alternatives: [
         {
           label: "Most common",
@@ -242,8 +238,8 @@ export const gloriaTranscript: Transcript = {
       original: "develop this, um, good habit",
       correction: "build better spending habits",
       explanation:
-        "Your meaning is clear, but 'develop this good habit' is a bit vague -- which habit exactly? In English, being specific makes your point stronger. Try naming the habit directly.",
-      rule: "Be specific: instead of 'good habit', name the habit. It makes your English sound more precise and confident.",
+        "Your meaning is clear! But naming the habit directly makes your point stronger -- 'build better spending habits' tells your listener exactly what you mean, instead of the vague 'good habit'.",
+      rule: "Be specific: name the habit instead of saying 'good habit' -- it sounds more precise and confident.",
       alternatives: [
         {
           label: "Specific & natural",
@@ -278,8 +274,8 @@ export const gloriaTranscript: Transcript = {
       original: "This is not about rich and poor",
       correction: "This is not about being rich or poor",
       explanation:
-        "Your idea is great! To make the structure smoother, add 'being' to show you're comparing two states, and use 'or' instead of 'and' since you're contrasting opposites.",
-      rule: "Parallel structure: 'about being X or Y' is cleaner than 'about X and Y' when comparing states.",
+        "Great idea! To make it smoother:\n- Add 'being' to show you're comparing two states\n- Use 'or' instead of 'and' since these are opposites\n\nSo: 'not about being rich or poor'.",
+      rule: "Comparing opposite states? Use 'being X or Y': 'about being rich or poor', 'about being right or wrong'.",
       alternatives: [
         {
           label: "With 'being'",
@@ -298,61 +294,518 @@ export const gloriaTranscript: Transcript = {
   ],
 }
 
+// ─── Gloria's second transcript text (Movie) ───
+
+const gloriaMovieText = `So this movie called Flying Colours, which was played by my head teacher of the class. Um, it's a very inspiring movie telling stories about, um, main character, Saika, who struggled with her schoolwork, only focus on beauty and just want to hang with friends all day in high school.
+
+So, in this movie, one of her teacher looked down on her and don't believe, um, she can get in uni, so um she decided to prove herself like to everybody. And at the end of the story she get into one of the best uni in Japan, which is very inspiring and that's also why my head of teacher, uh, like my teacher want us to watch that in high school.
+
+But the thing I learned from this movie is not about studying hard and dream comes true. Um, I learned something about friendship. So um, the plot when she wanna study hard because she's a hot girl and she also got hot friends. They always hang out with each other, but when she decide she want to study hard, um, her friend was very supportive.
+
+Sometime like in Chinese high school, student kind of think study hard is awkward or embarrassed, so, um, they don't like nerds or like hardworking students. Um, if you say I'm gonna study hard you might got laughed at.
+
+So in that movie, I realise real friends will support each other no matter what and people should not, um, mock someone who wanna improve and change.`
+
+export const gloriaMovieTranscript: Transcript = {
+  id: "gloria_movie_001",
+  title: "Book or Movie with Strong Impact",
+  date: "2026-02-20",
+  prompt:
+    "Describe a book or movie that had a strong impact on you. You should say:\n- What the book or movie was\n- Why did you decide to read or watch it\n- How did it influence you\n- Would you recommend it to others?",
+  content: gloriaMovieText,
+  score: 55,
+  errors: [
+    {
+      id: "GM1",
+      startIndex: gloriaMovieText.indexOf("telling stories about, um, main character"),
+      endIndex:
+        gloriaMovieText.indexOf("telling stories about, um, main character") +
+        "telling stories about, um, main character".length,
+      category: "articles",
+      original: "telling stories about, um, main character",
+      correction: "telling stories about the main character",
+      explanation:
+        "There's only one main character in this movie, so you need 'the' -- it tells your listener 'you know which one I mean'. Without it, it sounds like a piece is missing.",
+      rule: "Only one of something? Use 'the': the main character, the teacher, the ending.",
+    },
+    {
+      id: "GM2",
+      startIndex: gloriaMovieText.indexOf("only focus on beauty"),
+      endIndex:
+        gloriaMovieText.indexOf("only focus on beauty") +
+        "only focus on beauty".length,
+      category: "tense",
+      original: "only focus on beauty",
+      correction: "only focused on her beauty",
+      explanation:
+        "You're retelling a movie plot -- past story, so past tense: 'focused' instead of 'focus'. Also, 'her beauty' sounds more natural than just 'beauty'.",
+      rule: "Retelling a story? Keep everything in past tense: 'focused', 'wanted', 'decided'.",
+    },
+    {
+      id: "GM3a",
+      startIndex: gloriaMovieText.indexOf("just want to hang"),
+      endIndex:
+        gloriaMovieText.indexOf("just want to hang") +
+        "just want to".length,
+      category: "tense",
+      original: "just want to",
+      correction: "just wanted to",
+      explanation:
+        "You're retelling a movie plot, so past tense: 'wanted' instead of 'want'. Same pattern as the others -- keep all verbs in past when telling a story.",
+      rule: "Past story = past verbs: 'want' becomes 'wanted', 'decide' becomes 'decided'.",
+    },
+    {
+      id: "GM3b",
+      startIndex: gloriaMovieText.indexOf("hang with friends"),
+      endIndex:
+        gloriaMovieText.indexOf("hang with friends") +
+        "hang with friends".length,
+      category: "verb-patterns",
+      original: "hang with friends",
+      correction: "hang out with her friends",
+      explanation:
+        "The phrasal verb is 'hang out' -- dropping 'out' changes the meaning. Phrasal verbs are two-part teams, so make sure both parts are there!",
+      rule: "Phrasal verbs need both parts: 'hang out', 'get into', 'look after'.",
+    },
+    {
+      id: "GM3c",
+      startIndex: gloriaMovieText.indexOf("all day in high school"),
+      endIndex:
+        gloriaMovieText.indexOf("all day in high school") +
+        "all day".length,
+      category: "style",
+      kind: "suggestion",
+      original: "all day",
+      correction: "all day long",
+      explanation:
+        "'All day long' is a more natural and emphatic way to say this in English. It adds a bit of rhythm and emphasis -- like you really mean the whole day!",
+      rule: "'All day long' sounds more natural and emphatic than just 'all day' in most spoken contexts.",
+    },
+    {
+      id: "GM4",
+      startIndex: gloriaMovieText.indexOf("one of her teacher"),
+      endIndex:
+        gloriaMovieText.indexOf("one of her teacher") +
+        "one of her teacher".length,
+      category: "singular-plural",
+      original: "one of her teacher",
+      correction: "one of her teachers",
+      explanation:
+        "After 'one of', the noun always needs to be plural -- you're picking one person from a group, so the group word is plural: 'one of her teachers'.",
+      rule: "'One of' + plural noun: one of her teachers, one of my friends, one of the best movies.",
+    },
+    {
+      id: "GM5",
+      startIndex: gloriaMovieText.indexOf("looked down on her and don't believe"),
+      endIndex:
+        gloriaMovieText.indexOf("looked down on her and don't believe") +
+        "looked down on her and don't believe".length,
+      category: "tense",
+      original: "looked down on her and don't believe",
+      correction: "looked down on her and didn't believe",
+      explanation:
+        "You got 'looked' right (past tense!), so just carry that through -- 'don't' needs to become 'didn't' to match.",
+      rule: "All verbs in the same clause should be in the same tense: 'looked' + 'didn't', not 'looked' + 'don't'.",
+    },
+    {
+      id: "GM6a",
+      startIndex: gloriaMovieText.indexOf("she can get"),
+      endIndex:
+        gloriaMovieText.indexOf("she can get") +
+        "she can".length,
+      category: "tense",
+      original: "she can",
+      correction: "she could",
+      explanation:
+        "You're telling a past story, so 'can' needs its past form: 'could'. Think of it the same way as 'want' -> 'wanted' -- modals have past forms too!",
+      rule: "Past story: 'can' becomes 'could', 'will' becomes 'would'.",
+    },
+    {
+      id: "GM6b",
+      startIndex: gloriaMovieText.indexOf("get in uni"),
+      endIndex:
+        gloriaMovieText.indexOf("get in uni") +
+        "get in uni".length,
+      category: "verb-patterns",
+      original: "get in uni",
+      correction: "get into uni",
+      explanation:
+        "When talking about being accepted somewhere, the phrasal verb is 'get into' (not 'get in'). 'Get in' means physically entering, 'get into' means being accepted.",
+      rule: "'Get into' = be accepted (get into uni, get into a program). 'Get in' = physically enter.",
+    },
+    {
+      id: "GM7a",
+      startIndex: gloriaMovieText.indexOf("she get into"),
+      endIndex:
+        gloriaMovieText.indexOf("she get into") +
+        "she get into".length,
+      category: "tense",
+      original: "she get into",
+      correction: "she got into",
+      explanation:
+        "Past story, so the verb needs its past form: 'got' instead of 'get'. Same pattern you've been working on -- you're getting the hang of it!",
+      rule: "Past story: 'get' becomes 'got', 'have' becomes 'had'.",
+    },
+    {
+      id: "GM7b",
+      startIndex: gloriaMovieText.indexOf("one of the best uni in Japan"),
+      endIndex:
+        gloriaMovieText.indexOf("one of the best uni in Japan") +
+        "one of the best uni in Japan".length,
+      category: "singular-plural",
+      original: "one of the best uni in Japan",
+      correction: "one of the best unis in Japan",
+      explanation:
+        "After 'one of the best', the noun always needs to be plural -- you're picking one from a group. So 'uni' becomes 'unis'.",
+      rule: "'One of the best' + plural noun: one of the best unis, one of the best movies.",
+    },
+    {
+      id: "GM8",
+      startIndex: gloriaMovieText.indexOf("my teacher want us to watch"),
+      endIndex:
+        gloriaMovieText.indexOf("my teacher want us to watch") +
+        "my teacher want us to watch".length,
+      category: "tense",
+      original: "my teacher want us to watch",
+      correction: "my teacher wanted us to watch",
+      explanation:
+        "This happened back in high school, so past tense: 'wanted' instead of 'want'. You're getting better at catching these -- just keep an eye on them!",
+      rule: "Past story = past verbs. 'Want' becomes 'wanted', 'decide' becomes 'decided'.",
+    },
+    {
+      id: "GM9",
+      startIndex: gloriaMovieText.indexOf("studying hard and dream comes true"),
+      endIndex:
+        gloriaMovieText.indexOf("studying hard and dream comes true") +
+        "studying hard and dream comes true".length,
+      category: "tense",
+      original: "studying hard and dream comes true",
+      correction: "studying hard and dreams coming true",
+      explanation:
+        "You started with 'studying' (-ing form), so the other side of 'and' needs to match: 'dreams coming true'. 'Comes' is present tense, but 'coming' keeps it consistent with the -ing form you already used.",
+      rule: "Both sides of 'and' need to match in form: -ing + -ing, or 'to' + 'to'. Keep it balanced!",
+    },
+    {
+      id: "GM10",
+      startIndex: gloriaMovieText.indexOf("when she decide she want to study hard"),
+      endIndex:
+        gloriaMovieText.indexOf("when she decide she want to study hard") +
+        "when she decide she want to study hard".length,
+      category: "tense",
+      original: "when she decide she want to study hard",
+      correction: "when she decided she wanted to study hard",
+      explanation:
+        "Both verbs here need past tense: 'decided' (not 'decide') and 'wanted' (not 'want'). Same pattern as before -- once you're in a past story, every verb needs its past form.",
+      rule: "Past story = past verbs everywhere, even in smaller clauses inside the sentence.",
+    },
+    {
+      id: "GM10b",
+      startIndex: gloriaMovieText.indexOf("Sometime"),
+      endIndex: gloriaMovieText.indexOf("Sometime") + "Sometime".length,
+      category: "word-form-choice",
+      original: "Sometime",
+      correction: "Sometimes",
+      explanation:
+        "'Sometime' and 'sometimes' mean different things. 'Sometime' means 'at an unspecified point in time' (e.g. 'let's meet sometime'). 'Sometimes' means 'occasionally' -- which is what you mean here.",
+      rule: "'Sometimes' = occasionally. 'Sometime' = at some unspecified time. Check which meaning you need!",
+    },
+    {
+      id: "GM10c",
+      startIndex: gloriaMovieText.indexOf("Chinese high school,"),
+      endIndex:
+        gloriaMovieText.indexOf("Chinese high school,") +
+        "Chinese high school".length,
+      category: "singular-plural",
+      original: "Chinese high school",
+      correction: "Chinese high schools",
+      explanation:
+        "You're making a general statement about a type of school, not one specific school -- so use the plural: 'Chinese high schools'. General statements like this always take plural nouns.",
+      rule: "General statements about a type of thing = plural noun: 'Chinese high schools', 'big cities', 'old buildings'.",
+    },
+    {
+      id: "GM11a",
+      startIndex: gloriaMovieText.indexOf("student kind of think"),
+      endIndex:
+        gloriaMovieText.indexOf("student kind of think") +
+        "student".length,
+      category: "singular-plural",
+      original: "student",
+      correction: "students",
+      explanation:
+        "You're talking about students in general, not one specific student -- so use the plural: 'students kind of think'.",
+      rule: "General statements about a group = plural noun: 'students think', 'people say', 'teachers expect'.",
+    },
+    {
+      id: "GM11b",
+      startIndex: gloriaMovieText.indexOf("study hard is awkward"),
+      endIndex:
+        gloriaMovieText.indexOf("study hard is awkward") +
+        "study hard".length,
+      category: "word-form-choice",
+      original: "study hard",
+      correction: "studying hard",
+      explanation:
+        "When an activity is the subject of a sentence, it needs the -ing form. So 'study hard is awkward' becomes 'studying hard is awkward'.",
+      rule: "Activity as subject = -ing form: 'Studying hard is tough', 'Running is fun', 'Learning takes time'.",
+    },
+    {
+      id: "GM11c",
+      startIndex: gloriaMovieText.indexOf("awkward or embarrassed"),
+      endIndex:
+        gloriaMovieText.indexOf("awkward or embarrassed") +
+        "awkward or embarrassed".length,
+      category: "word-form-choice",
+      original: "awkward or embarrassed",
+      correction: "awkward or embarrassing",
+      explanation:
+        "You're describing the activity (studying hard), not a person -- so use -ing: 'embarrassing'. The activity is what causes the feeling. A person feels 'embarrassed', but the activity itself is 'embarrassing'.",
+      rule: "Thing/activity = -ing (embarrassing, boring). Person's feeling = -ed (embarrassed, bored).",
+    },
+    {
+      id: "GM12",
+      startIndex: gloriaMovieText.indexOf("you might got laughed at"),
+      endIndex:
+        gloriaMovieText.indexOf("you might got laughed at") +
+        "you might got laughed at".length,
+      category: "tense",
+      original: "you might got laughed at",
+      correction: "you might get laughed at",
+      explanation:
+        "'Got' is past tense, but after 'might' the verb needs to be in its base form: 'get'. Think of it like this -- the modal (might) already carries the meaning, so the verb stays simple. Same idea as 'can' needing 'could' in past stories.",
+      rule: "After modals (might, could, should, will), always use the base form: might get, could see, should go.",
+    },
+    {
+      id: "GM13",
+      startIndex: gloriaMovieText.indexOf("in that movie, I realise"),
+      endIndex:
+        gloriaMovieText.indexOf("in that movie, I realise") +
+        "in that movie, I realise".length,
+      category: "tense",
+      original: "in that movie, I realise",
+      correction: "in that movie, I realised",
+      explanation:
+        "This happened when you watched the movie, so past tense: 'realised' instead of 'realise'. Same pattern you've been working on -- you're getting the hang of it!",
+      rule: "Past story = past verbs. 'Realise' becomes 'realised', 'learn' becomes 'learned'.",
+    },
+    {
+      id: "GM14a",
+      startIndex: gloriaMovieText.indexOf("mock someone"),
+      endIndex:
+        gloriaMovieText.indexOf("mock someone") +
+        "mock someone".length,
+      category: "style",
+      kind: "suggestion",
+      original: "mock someone",
+      correction: "mock others",
+      explanation:
+        "'Mock others' sounds more natural here -- 'others' fits better when you're making a general point about how people should treat each other.",
+      rule: "For general statements: 'others' or 'people' sounds more natural than 'someone'.",
+    },
+    {
+      id: "GM14b",
+      startIndex: gloriaMovieText.indexOf("wanna improve"),
+      endIndex:
+        gloriaMovieText.indexOf("wanna improve") +
+        "wanna improve".length,
+      category: "style",
+      kind: "suggestion",
+      original: "wanna improve",
+      correction: "want to improve",
+      explanation:
+        "This is a serious, meaningful point you're making -- using 'want to' instead of 'wanna' gives it more weight. 'Wanna' is fine in casual chat, but 'want to' sounds stronger here.",
+      rule: "For serious or emphatic points, 'want to' sounds more powerful than 'wanna'.",
+    },
+  ],
+}
+
 export const gloriaTranscriptList: Omit<
   Transcript,
   "content" | "errors"
 >[] = [
   {
+    id: "gloria_movie_001",
+    title: "Book or Movie with Strong Impact",
+    date: "2026-02-20",
+    score: 55,
+  },
+  {
     id: "gloria_money_001",
     title: "Money Management Habit",
     date: "2026-02-18",
-  score: 68,
+    score: 68,
   },
 ]
 
-// ─── Gloria's error patterns (aggregated from single transcript) ───
+// ─── Gloria's error patterns (aggregated across all transcripts) ───
 
 export const gloriaErrorPatterns: ErrorPattern[] = [
   {
     id: "g1",
-    category: "verb-patterns",
-    name: "Verb Patterns",
+    category: "tense",
+    name: "Tense & Time",
     priority: "HIGH",
-    count: 4,
-    conversationCount: 1,
+    count: 13,
+    conversationCount: 2,
     shortExplanation:
-      "You used verbs in the wrong form a few times. Here are the rules: (1) After a preposition like 'at', 'for', or 'about', always add -ing to the verb (e.g. 'good at managing', not 'good at manage'). (2) 'Gonna' is informal for 'going to', but it still needs a helper verb before it -- say 'we're gonna' or 'I'm gonna', never just 'we gonna'. (3) After 'rather than', use the -ing form to keep the sentence flowing smoothly (e.g. 'rather than letting', not 'rather than let').",
+      "Your most common pattern! Once you start a past story, every verb needs its past form:\n\n- 'decided' not 'decide'\n- 'wanted' not 'want'\n- 'didn't' not 'don't'\n- 'could' not 'can'\n- 'got' not 'get'\n\nOnly switch to present for things still true now -- like 'I have a friend' (you still have them). You already use past tense correctly a lot -- this is just about staying consistent the whole way through.",
     quickTip:
-      "See a preposition (at, for, about)? The next verb must end in -ing. Using 'gonna'? Make sure there's a helper verb before it.",
+      "Before you finish a story, do a quick verb check: did every verb get its past form? If one slipped to present, that's your cue to fix it.",
+    examples: [
+      {
+        incorrect: "I actually got a friend",
+        correct: "I actually have a friend",
+        context:
+          "You still have this friend right now -- so present tense 'have' is the one you want here.",
+      },
+      {
+        incorrect: "there was a time we hang out",
+        correct: "there was a time we hung out",
+        context:
+          "'There was a time' tells us this is a past story -- so 'hang' needs to become 'hung'.",
+      },
+      {
+        incorrect: "only focus on beauty",
+        correct: "only focused on her beauty",
+        context:
+          "You're retelling a movie plot, so stay in past tense -- 'focused'.",
+      },
+      {
+        incorrect: "looked down on her and don't believe",
+        correct: "looked down on her and didn't believe",
+        context:
+          "'Looked' is already past tense -- so 'don't' needs to match and become 'didn't'.",
+      },
+      {
+        incorrect: "when she decide she want to study hard",
+        correct: "when she decided she wanted to study hard",
+        context:
+          "Both verbs need past tense here: 'decided' and 'wanted'.",
+      },
+      {
+        incorrect: "in that movie, I realise",
+        correct: "in that movie, I realised",
+        context:
+          "This happened when you watched the movie -- past event, so 'realised'.",
+      },
+      {
+        incorrect: "she can get",
+        correct: "she could get",
+        context:
+          "Past story, so 'can' needs its past form: 'could'. Modals have past forms too!",
+      },
+      {
+        incorrect: "she get into",
+        correct: "she got into",
+        context:
+          "Past story: 'get' becomes 'got'.",
+      },
+      {
+        incorrect: "you might got laughed at",
+        correct: "you might get laughed at",
+        context:
+          "After 'might', use the base form: 'get', not 'got'.",
+      },
+      {
+        incorrect: "studying hard and dream comes true",
+        correct: "studying hard and dreams coming true",
+        context:
+          "'Comes' is present -- match the -ing form you already started with: 'coming'.",
+      },
+    ],
+    studyContent: {
+      fullExplanation:
+        "This came up 13 times across your two recordings -- it's your most common pattern by far. The good news: you clearly know how past tense works -- you use it correctly plenty of times! The pattern to watch for is when a verb slips back to present tense in the middle of a past story. This includes modals too: 'can' becomes 'could', 'might get' not 'might got'. Also watch for mismatched forms across 'and': 'studying and coming' (not 'studying and comes').",
+      tables: [
+        {
+          title: "Staying in Past Tense",
+          table: {
+            headers: ["Situation", "Tense", "Example"],
+            rows: [
+              {
+                cells: [
+                  "Past story, all events completed",
+                  "Stay in past",
+                  "There was a time we hung out and had dinner.",
+                ],
+              },
+              {
+                cells: [
+                  "Something still true now",
+                  "OK to use present",
+                  "I realised that I waste a lot of money (still true).",
+                ],
+              },
+              {
+                cells: [
+                  "After a modal (might, could, should...)",
+                  "Base form, not past",
+                  "might get (not 'might got'), could see (not 'could saw')",
+                ],
+              },
+              {
+                cells: [
+                  "Reporting what someone said",
+                  "Shift to past",
+                  "She said there was nothing she wanted.",
+                ],
+              },
+            ],
+          },
+        },
+      ],
+      trickySpots: [
+        "When you're telling an exciting story, your brain wants to make it vivid by switching to present tense -- totally natural instinct! But English expects past tense throughout.",
+        "Verb pairs to practise: hang/hung, realise/realised, decide/decided, focus/focused, want/wanted, get/got.",
+        "Don't forget modals have past forms too: can/could, will/would.",
+      ],
+    },
+  },
+  {
+    id: "g2",
+    category: "verb-patterns",
+    name: "Verb Structure",
+    priority: "MEDIUM",
+    count: 6,
+    conversationCount: 2,
+    shortExplanation:
+      "A few verb-form rules keep coming up. Here are the key ones:\n\n- After prepositions (at, for, about), always add -ing -- 'good at managing'\n\n- Finish your phrasal verbs -- 'hang out', not just 'hang'; 'get into', not 'get in'\n\n- 'Gonna' needs a helper verb before it -- 'we're gonna', not 'we gonna'\n\n- After 'rather than', use the -ing form -- 'rather than letting'\n\nThese click fast once you start spotting them!",
+    quickTip:
+      "Quick check: what word comes right before the verb? A preposition = add -ing. A modal = use base form. A phrasal verb = make sure it has both parts.",
     examples: [
       {
         incorrect: "good at manage her money",
         correct: "good at managing her money",
         context:
-          "After 'at' (a preposition), the verb always takes -ing.",
+          "'At' is a preposition, so the verb after it always takes -ing.",
       },
       {
         incorrect: "we all gonna order",
         correct: "we would all order / we're all gonna order",
         context:
-          "'Gonna' is short for 'going to' but still needs a helper verb (are/will). Or use 'would' for past habits.",
+          "'Gonna' needs a helper verb (are/will). Or switch to 'would' for past habits.",
       },
       {
-        incorrect: "how you gonna use it",
-        correct: "how you're gonna use it / how you will use it",
+        incorrect: "hang with friends",
+        correct: "hang out with her friends",
         context:
-          "Same pattern -- add the helper verb before 'gonna'.",
+          "The phrasal verb is 'hang out' -- dropping 'out' changes the meaning.",
       },
       {
-        incorrect: "rather than let the money control you",
-        correct: "rather than letting money control you",
+        incorrect: "get in uni",
+        correct: "get into uni",
         context:
-          "'Rather than' + -ing keeps the sentence flowing naturally. Also drop 'the' before general concepts.",
+          "'Get into' = be accepted somewhere. 'Get in' = physically enter.",
+      },
+      {
+        incorrect: "rather than let",
+        correct: "rather than letting",
+        context:
+          "After 'rather than', use the -ing form to keep the sentence flowing.",
       },
     ],
     studyContent: {
       fullExplanation:
-        "English uses different verb forms depending on what comes before them. Two key patterns appear in your speech: (1) after prepositions like 'at', 'for', 'about', always use the -ing form (gerund), and (2) 'gonna' (informal for 'going to') always needs a helper verb (am/is/are/will) before it. Without the helper, the sentence sounds incomplete.",
+        "Verbs in English change form depending on what comes right before them. This came up 6 times across your recordings. Once you learn to spot the word before the verb, the right form becomes much easier to pick.",
       tables: [
         {
           title: "Quick Decision Guide",
@@ -385,33 +838,116 @@ export const gloriaErrorPatterns: ErrorPattern[] = [
         },
       ],
       trickySpots: [
-        "'Gonna' sounds complete in fast speech, but in standard English it always needs 'am/is/are/will' before it: 'I'm gonna', 'we're gonna', 'they're gonna'.",
-        "After prepositions, it's ALWAYS -ing: good at speaking, tired of waiting, interested in learning.",
+        "'Gonna' sounds complete when you say it fast, but it always needs a helper verb: I'm gonna, we're gonna, they're gonna.",
+        "Phrasal verbs are two-part teams -- 'hang out', 'get into', 'look after'. Dropping the second word changes the meaning or sounds incomplete.",
       ],
     },
   },
   {
-    id: "g2",
+    id: "g3",
+    category: "singular-plural",
+    name: "Singular / Plural Agreement",
+    priority: "MEDIUM",
+    count: 6,
+    conversationCount: 2,
+    shortExplanation:
+      "A few singular/plural mismatches came up. The key patterns:\n\n- After 'one of', always use a plural noun -- 'one of her teachers', not 'one of her teacher'\n- Pointer words need to match -- 'these skills' (plural), not 'this skills'\n- Some compound nouns keep the plural -- 'drinks menu' is a fixed expression\n- General statements about a type of thing take a plural noun -- 'Chinese high schools', not 'Chinese high school'\n\nOnce you know these patterns, they're easy to catch!",
+    quickTip:
+      "Saying 'one of'? The next noun is always plural. Saying 'this' or 'these'? Check if the noun is singular or plural and match it.",
+    examples: [
+      {
+        incorrect: "develop this, uh, money skills",
+        correct: "develop these money skills",
+        context:
+          "'Skills' is plural, so the pointer needs to be 'these' (not 'this').",
+      },
+      {
+        incorrect: "one of her teacher",
+        correct: "one of her teachers",
+        context:
+          "You're picking one person from a group -- so the group word needs to be plural: 'teachers'.",
+      },
+      {
+        incorrect: "the drink menu",
+        correct: "the drinks menu",
+        context:
+          "'Drinks menu' is a fixed expression -- the plural stays because the menu lists multiple drinks.",
+      },
+      {
+        incorrect: "one of the best uni in Japan",
+        correct: "one of the best unis in Japan",
+        context:
+          "After 'one of the best', the noun always needs to be plural: 'unis'.",
+      },
+      {
+        incorrect: "student kind of think",
+        correct: "students kind of think",
+        context:
+          "Talking about students in general = plural: 'students'.",
+      },
+      {
+        incorrect: "Chinese high school",
+        correct: "Chinese high schools",
+        context:
+          "Making a general statement about a type of school, not one specific school -- so use the plural: 'Chinese high schools'.",
+      },
+    ],
+    studyContent: {
+      fullExplanation:
+        "English expects pointer words (this/these) to match the noun they point to, and patterns like 'one of' always need a plural noun after them. General statements about groups also need plurals. This came up 6 times across your recordings -- worth keeping an eye on.",
+      tables: [
+        {
+          title: "Singular / Plural Patterns",
+          table: {
+            headers: ["Pattern", "Rule", "Example"],
+            rows: [
+              { cells: ["this / that", "singular noun", "this skill, that book"] },
+              { cells: ["these / those", "plural noun", "these skills, those books"] },
+              { cells: ["one of + noun", "always plural", "one of her teachers, one of my friends"] },
+            ],
+          },
+        },
+      ],
+      trickySpots: [
+        "Filler words (um, uh) can sneak in between the pointer and the noun, making it easy to lose track -- totally normal, just something to watch for.",
+        "After 'one of the best', the noun must be plural: 'one of the best unis' (not 'uni').",
+      ],
+    },
+  },
+  {
+    id: "g4",
     category: "articles",
     name: "Article Usage",
-    priority: "HIGH",
-    count: 1,
-    conversationCount: 1,
+    priority: "MEDIUM",
+    count: 3,
+    conversationCount: 2,
     shortExplanation:
-      "You added 'the' before a general category where it isn't needed. In English, when you're talking about something in general -- not one specific thing -- you drop 'the'. For example, 'order drinks' means any drinks, but 'order the drinks' means specific drinks you've already mentioned. A quick test: does your listener know exactly which one you're referring to? If not, you probably don't need 'the'.",
+      "Articles are genuinely one of the trickiest parts of English! The core idea:\n\n- 'The' = you and your listener both know which one -- 'the main character' (there's only one)\n- No article = you're speaking generally -- 'order drinks' (any drinks, not specific ones)\n\nA good test: could your listener point to the exact thing you mean? If yes, use 'the'. If not, skip it.",
     quickTip:
-      "Ask yourself: does my listener already know exactly which one I mean? If you're talking about the general concept, drop 'the'.",
+      "Try this test: could your listener point to the exact one you mean? Yes = 'the'. No = drop it.",
     examples: [
       {
         incorrect: "order the drinks",
         correct: "order drinks",
         context:
-          "You're talking about drinks in general, not specific ones. General categories don't need 'the'.",
+          "You're talking about drinks in general, not specific ones -- so drop 'the'.",
+      },
+      {
+        incorrect: "telling stories about, um, main character",
+        correct: "telling stories about the main character",
+        context:
+          "There's one specific main character in the movie -- so you need 'the'.",
+      },
+      {
+        incorrect: "the money control you",
+        correct: "money control you",
+        context:
+          "Money as a general concept doesn't need 'the' -- drop it.",
       },
     ],
     studyContent: {
       fullExplanation:
-        "Articles ('the', 'a/an', or nothing) signal whether you and your listener are thinking about the same specific thing. 'The' means you both know which one. No article with plural or uncountable nouns means the general concept. In your speech, you tend to add 'the' before general concepts where it's not needed.",
+        "Articles signal whether you and your listener are on the same page about which specific thing you mean. This came up 3 times -- you're doing well here, just keep the 'pointing test' in mind.",
       tables: [
         {
           title: "When to Use 'The' vs Nothing",
@@ -422,7 +958,7 @@ export const gloriaErrorPatterns: ErrorPattern[] = [
                 cells: [
                   "Specific -- both people know which one",
                   "the",
-                  "Pass me the menu (the one on the table)",
+                  "the main character, the menu on the table",
                 ],
               },
               {
@@ -439,146 +975,180 @@ export const gloriaErrorPatterns: ErrorPattern[] = [
                   "Money is a tool / Happiness matters",
                 ],
               },
-              {
-                cells: [
-                  "Already mentioned before",
-                  "the",
-                  "She checked the drink menu (specific menu)",
-                ],
-              },
             ],
           },
         },
       ],
       trickySpots: [
-        "General truths about categories use no article: 'I like dogs' (not 'the dogs'), 'order drinks' (not 'the drinks').",
-        "Abstract nouns used as general concepts don't take 'the': money, happiness, life, love.",
+        "General truths about categories use no article: 'order drinks' (not 'the drinks'), 'I like music' (not 'the music').",
+        "When there's only one of something and you both know it, use 'the': 'the main character', 'the sun'.",
       ],
       decisionGuide:
-        "Am I talking about a specific one we both know about? Use 'the'. Am I talking about the concept in general? Use nothing.",
+        "Could my listener point to the exact one? Yes = 'the'. Am I talking generally? = nothing.",
     },
   },
   {
-    id: "g3",
-    category: "tense",
-    name: "Tense Consistency",
-    priority: "HIGH",
-    count: 3,
-    conversationCount: 1,
-    shortExplanation:
-      "You switched between past and present tense in the middle of your story. In English, once you start telling a past story, you need to keep all your verbs in past tense -- 'hung out' not 'hang out', 'realised' not 'realise'. The one exception: if something is still true right now (like you still have that friend), use present tense for that part ('I have a friend', not 'I got a friend').",
-    quickTip:
-      "Telling a story? Pick past tense and stick with it. Describing something current? Use present tense.",
-    examples: [
-      {
-        incorrect: "I actually got a friend",
-        correct: "I actually have a friend",
-        context:
-          "You still have this friend now, so use present tense 'have', not past tense 'got'.",
-      },
-      {
-        incorrect: "there was a time we hang out",
-        correct: "there was a time we hung out",
-        context:
-          "'There was a time' signals past, so use 'hung out' (past), not 'hang out' (present).",
-      },
-      {
-        incorrect: "after that I just realise",
-        correct: "after that I just realised",
-        context:
-          "You're narrating a past event, so use 'realised' (past), not 'realise' (present).",
-      },
-    ],
-    studyContent: {
-      fullExplanation:
-        "When you tell a story about the past, English expects you to stay in past tense throughout. You can't switch to present tense mid-story just because the action felt vivid. This is one of the most common patterns for English learners -- the story starts in past tense but some verbs slip back to present.",
-      tables: [
-        {
-          title: "Staying in Past Tense",
-          table: {
-            headers: ["Situation", "Tense", "Example"],
-            rows: [
-              {
-                cells: [
-                  "Past story, all events completed",
-                  "Stay in past",
-                  "There was a time we hung out and had dinner.",
-                ],
-              },
-              {
-                cells: [
-                  "Something still true now",
-                  "OK to use present",
-                  "I realised that I waste a lot of money (still true).",
-                ],
-              },
-              {
-                cells: [
-                  "Reporting what someone said",
-                  "Shift to past",
-                  "She said there was nothing she wanted.",
-                ],
-              },
-            ],
-          },
-        },
-      ],
-      trickySpots: [
-        "The 'vivid present' trap: it feels natural to use present tense when telling an exciting past story, but English expects past throughout.",
-        "Common pairs to practise: hang/hung, realise/realised, see/saw, go/went, say/said.",
-      ],
-    },
-  },
-  {
-    id: "g4",
-    category: "singular-plural",
-    name: "Singular / Plural Agreement",
+    id: "g5",
+    category: "word-form-choice",
+    name: "Word & Form Mix-Ups",
     priority: "MEDIUM",
-    count: 2,
+    count: 4,
     conversationCount: 1,
     shortExplanation:
-      "Words like 'this' and 'these' need to match the noun they point to. 'This' is for one thing ('this skill'), 'these' is for more than one ('these skills'). It's easy to lose track when filler words like 'um' separate them. Also, some compound nouns keep the plural -- 'drinks menu' (not 'drink menu') is a fixed expression because the menu lists multiple drinks. Other examples: 'sports car', 'arms dealer'.",
+      "A few word-form patterns showed up here:\n\n- -ing describes the thing: 'studying hard is embarrassing' (the activity causes the feeling)\n- -ed describes the person: 'I feel embarrassed' (you're the one experiencing it)\n- When an activity is the subject, use the -ing form: 'studying hard is tough'\n- For general advice, use 'people' (plural) not 'someone': 'people who want to improve'",
     quickTip:
-      "Before you say 'this' or 'these', check: is the noun singular or plural? Also, learn fixed expressions like 'drinks menu' and 'sports car'.",
+      "Ask yourself: am I describing the thing/activity, or the person feeling it? Thing = -ing. Person = -ed.",
     examples: [
       {
-        incorrect: "develop this, uh, money skills",
-        correct: "develop these money skills",
+        incorrect: "study hard is awkward or embarrassed",
+        correct: "studying hard is awkward or embarrassing",
         context:
-          "'Skills' is plural, so the pointer word must be 'these' (plural), not 'this' (singular).",
+          "The activity is what causes the feeling, so it's 'embarrassing' (-ing), not 'embarrassed' (-ed).",
       },
       {
-        incorrect: "the drink menu",
-        correct: "the drinks menu",
+        incorrect: "study hard",
+        correct: "studying hard",
         context:
-          "'Drinks menu' is a fixed expression -- 'drinks' stays plural because it refers to a list of multiple drinks.",
+          "When an activity is the subject of a sentence, use -ing: 'Studying hard is tough'.",
+      },
+      {
+        incorrect: "mock someone",
+        correct: "mock others",
+        context:
+          "For general statements about how people should treat each other, 'others' sounds more natural than 'someone'.",
+      },
+      {
+        incorrect: "Sometime like in Chinese high schools",
+        correct: "Sometimes like in Chinese high schools",
+        context:
+          "'Sometime' means 'at an unspecified future time'; 'sometimes' means 'occasionally' -- which is what you mean here.",
       },
     ],
     studyContent: {
       fullExplanation:
-        "Demonstrative pronouns (this, that, these, those) must agree in number with the noun they modify. 'This' and 'that' are for singular nouns; 'these' and 'those' are for plural nouns. This is easy to miss in speech because fillers (um, uh) can separate the pointer from the noun.",
+        "English has pairs of adjectives that look similar but mean different things: -ing describes the thing causing a feeling, -ed describes the person experiencing it. Also, when an activity acts as the subject, it needs the -ing form. This came up 4 times -- not a huge pattern, but worth being aware of.",
       tables: [
         {
-          title: "Demonstrative Agreement",
+          title: "-ing vs -ed Adjectives",
           table: {
-            headers: ["Pointer", "Used with", "Example"],
+            headers: ["-ing (the thing)", "-ed (the person)", "Example"],
             rows: [
-              { cells: ["this / that", "singular noun", "this skill, that book"] },
-              {
-                cells: [
-                  "these / those",
-                  "plural noun",
-                  "these skills, those books",
-                ],
-              },
+              { cells: ["embarrassing", "embarrassed", "Studying is embarrassing. I feel embarrassed."] },
+              { cells: ["boring", "bored", "The movie is boring. I am bored."] },
+              { cells: ["exciting", "excited", "The news is exciting. She is excited."] },
+              { cells: ["confusing", "confused", "The instructions are confusing. He is confused."] },
             ],
           },
         },
       ],
       trickySpots: [
-        "Filler words (um, uh) between the pointer and noun can make you lose track of whether you said 'this' or 'these'.",
-        "If you're unsure, check the noun: does it end in -s? If yes, use 'these/those'.",
+        "Look at the subject of the sentence: if it's a thing or activity, use -ing. If it's a person, use -ed.",
+        "'Wanna' is totally fine in casual chat, but for more serious or general statements, 'want to' sounds stronger.",
       ],
     },
   },
+
 ]
+
+// ─── Practice exercises (g1: Tense & Time only for now) ───
+
+export type FillInBlankQuestion = {
+  sentence: string        // Use ___ for the blank
+  options: string[]        // 3 choices
+  correctIndex: number     // index of correct option
+  explanation: string
+}
+
+export type CorrectionPrompt = {
+  original: string
+  corrected: string        // bold words wrapped in **word**
+  tip: string
+}
+
+export type RepeatSentence = {
+  sentence: string
+}
+
+export type PatternExercises = {
+  patternId: string
+  fillInBlanks: FillInBlankQuestion[]
+  corrections: CorrectionPrompt[]
+  repeatAfterMe: RepeatSentence[]
+}
+
+export const gloriaExercises: Record<string, PatternExercises> = {
+  g1: {
+    patternId: "g1",
+    fillInBlanks: [
+      {
+        sentence: "She ___ she wanted to study hard.",
+        options: ["decide", "decided", "decides"],
+        correctIndex: 1,
+        explanation:
+          "Past story = past tense. 'Decided' is the past form of 'decide'.",
+      },
+      {
+        sentence: "There was a time we ___ out together.",
+        options: ["hang", "hung", "hangs"],
+        correctIndex: 1,
+        explanation:
+          "'There was a time' signals past, so you need 'hung' (past of 'hang').",
+      },
+      {
+        sentence: "In that movie, I ___ that real friends support each other.",
+        options: ["realise", "realised", "realising"],
+        correctIndex: 1,
+        explanation:
+          "You watched the movie in the past, so 'realised' is the right form.",
+      },
+    ],
+    corrections: [
+      {
+        original: "She decide she want to study hard.",
+        corrected: "She **decided** she **wanted** to study hard.",
+        tip: "Both verbs need past tense: decide -> decided, want -> wanted.",
+      },
+      {
+        original: "He looked down on her and don't believe her.",
+        corrected: "He looked down on her and **didn't** believe her.",
+        tip: "'Looked' is already past -- 'don't' needs to match: didn't.",
+      },
+    ],
+    repeatAfterMe: [
+      { sentence: "She decided she wanted to leave early." },
+      { sentence: "I realised I had made a mistake." },
+      { sentence: "They could see that something had changed." },
+    ],
+  },
+}
+
+// ─── Derive per-transcript patterns from inline errors ───
+// Takes a transcript and returns only the aggregated patterns
+// that appear in that transcript's errors, with counts scoped
+// to that transcript.
+
+export function getPatternsForTranscript(
+  transcript: Transcript
+): ErrorPattern[] {
+  // Count errors per category in this transcript
+  const categoryCounts: Partial<Record<string, number>> = {}
+  for (const err of transcript.errors) {
+    categoryCounts[err.category] = (categoryCounts[err.category] ?? 0) + 1
+  }
+
+  // Filter and re-count the global patterns for this transcript
+  return gloriaErrorPatterns
+    .filter((p) => (categoryCounts[p.category] ?? 0) > 0)
+    .map((p) => ({
+      ...p,
+      count: categoryCounts[p.category] ?? 0,
+      conversationCount: 1,
+      // Filter examples to only those from this transcript's errors
+      examples: p.examples.filter((ex) =>
+        transcript.errors.some(
+          (e) => e.original === ex.incorrect || e.correction === ex.correct
+        )
+      ),
+    }))
+    .sort((a, b) => b.count - a.count)
+}

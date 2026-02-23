@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useMemo } from "react"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Card, CardContent } from "@/components/ui/card"
 import { BarChart3, FileText, Clock, Sparkles } from "lucide-react"
@@ -13,8 +13,10 @@ import { AccuracyScore } from "@/components/score-ring"
 import { LearningCards } from "@/components/learning-cards"
 import {
   gloriaTranscript,
+  gloriaMovieTranscript,
   gloriaTranscriptList,
   gloriaErrorPatterns,
+  getPatternsForTranscript,
 } from "@/lib/gloria-data"
 import type { ErrorPattern } from "@/lib/grammar-data"
 
@@ -40,7 +42,7 @@ function ComingSoonOverview() {
         <div className="flex items-center gap-2 rounded-full bg-primary/5 border border-primary/10 px-4 py-2">
           <Sparkles className="h-3.5 w-3.5 text-primary" />
           <span className="text-xs font-medium text-primary">
-            1 transcript analysed so far -- more coming soon
+            2 transcripts analysed so far -- more coming soon
           </span>
         </div>
       </CardContent>
@@ -48,12 +50,22 @@ function ComingSoonOverview() {
   )
 }
 
+const transcriptsMap: Record<string, typeof gloriaTranscript> = {
+  [gloriaTranscript.id]: gloriaTranscript,
+  [gloriaMovieTranscript.id]: gloriaMovieTranscript,
+}
+
 export default function GloriaDashboard() {
-  const [activeTranscript, setActiveTranscript] = useState(
-    gloriaTranscript.id
+  const [activeTranscriptId, setActiveTranscriptId] = useState(
+    gloriaTranscriptList[0].id
   )
   const [studyPattern, setStudyPattern] = useState<ErrorPattern | null>(null)
 
+  const activeTranscript = transcriptsMap[activeTranscriptId] ?? gloriaTranscript
+  const activePatterns = useMemo(
+    () => getPatternsForTranscript(activeTranscript),
+    [activeTranscript]
+  )
   const totalErrors = gloriaErrorPatterns.reduce((sum, p) => sum + p.count, 0)
 
   return (
@@ -62,7 +74,7 @@ export default function GloriaDashboard() {
         <DashboardHeader
           studentName="Gloria"
           totalErrors={totalErrors}
-          totalConversations={1}
+          totalConversations={2}
           totalPatterns={gloriaErrorPatterns.length}
         />
 
@@ -89,16 +101,16 @@ export default function GloriaDashboard() {
               <div className="lg:col-span-1 space-y-6">
                 <TranscriptList
                   transcripts={gloriaTranscriptList}
-                  activeId={activeTranscript}
-                  onSelect={setActiveTranscript}
+                  activeId={activeTranscriptId}
+                  onSelect={setActiveTranscriptId}
                 />
-                <AccuracyScore patterns={gloriaErrorPatterns} />
-                <LearningCards patterns={gloriaErrorPatterns} />
+                <AccuracyScore patterns={activePatterns} />
+                <LearningCards patterns={activePatterns} />
               </div>
               <div className="lg:col-span-3 space-y-6">
-                <TranscriptViewer transcript={gloriaTranscript} />
+                <TranscriptViewer transcript={activeTranscript} />
                 <ErrorPatterns
-                  patterns={gloriaErrorPatterns}
+                  patterns={activePatterns}
                   onStudy={setStudyPattern}
                   layout="horizontal"
                 />
