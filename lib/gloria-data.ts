@@ -569,12 +569,13 @@ export const gloriaMovieTranscript: Transcript = {
       endIndex:
         gloriaMovieText.indexOf("mock someone") +
         "mock someone".length,
-      category: "word-form-choice",
+      category: "style",
+      kind: "suggestion",
       original: "mock someone",
-      correction: "mock people",
+      correction: "mock others",
       explanation:
-        "For general advice or statements, 'people' (plural) sounds more natural than 'someone' (singular). You're talking about anyone who does this, not one specific person.",
-      rule: "General statements = plural: 'people who want to...', 'students who try to...'.",
+        "'Mock others' sounds more natural here -- 'others' fits better when you're making a general point about how people should treat each other.",
+      rule: "For general statements: 'others' or 'people' sounds more natural than 'someone'.",
     },
     {
       id: "GM14b",
