@@ -35,8 +35,8 @@ export const gloriaTranscript: Transcript = {
       original: "I actually got a friend",
       correction: "I actually have a friend",
       explanation:
-        "When describing a current situation -- you still have this friend -- use the present tense 'have', not the past tense 'got'. 'Got' suggests you acquired the friend in the past and is less natural here.",
-      rule: "Use 'have' for something you currently possess. Use 'got' for the moment of acquiring it.",
+        "You still have this friend right now, so you want present tense here -- 'I have a friend'. When you say 'I got a friend', it sounds like you're talking about the moment you met them. It's a really common mix-up, so don't worry -- just think: is this still true right now? If yes, go with 'have'.",
+      rule: "Still true right now? Use 'have'. Talking about when it happened? Use 'got'.",
     },
     {
       id: "G1",
@@ -48,8 +48,8 @@ export const gloriaTranscript: Transcript = {
       original: "good at manage her money",
       correction: "good at managing her money",
       explanation:
-        "After a preposition like 'at', always use the -ing form of the verb. Think of it as: preposition + verb-ing. So 'good at manage' becomes 'good at managing'.",
-      rule: "Preposition + verb = always use the -ing form (gerund).",
+        "This is a really useful rule to know! Whenever you see a preposition like 'at', 'for', or 'about', the verb right after it always needs -ing. So 'good at manage' becomes 'good at managing'. Once you get the hang of this pattern, it'll start feeling automatic.",
+      rule: "Preposition (at, for, about...) + verb = always -ing. No exceptions!",
     },
     {
       id: "G2",
