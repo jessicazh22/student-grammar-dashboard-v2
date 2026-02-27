@@ -748,7 +748,7 @@ export const errorPatterns: ErrorPattern[] = [
   },
 ]
 
-// ─── Transcript (keeping sample until real ones provided) ───
+// ─── Rina's transcripts ───
 
 const rinaHappinessText = `I'm here for answering the first question, what do you think makes people happy? Um, I think happiness is very subjective. It can mean different things to different people. For someone, maybe the emotional connections or meaningful relationships with their friends and families can make them happy because persons can feel supported and understood by their friends and families. Other things like hobby, good health, delicious food and even good weather can also bring us happiness. And for the second question, is there a difference between short term and long term happiness? I believe there is a difference. Short term happiness can bring us immediately pleasure like when we are having a piece of chocolate, the sugar can induce our brains release dopamine and this kind of feeling is temporary, but long term happiness usually refers to something more stable, um, for instance, like very solid friendship, which can provide us happiness constantly.`
 
@@ -890,14 +890,182 @@ export const sampleTranscript: Transcript = {
   ],
 }
 
+// ─── Small Businesses transcript ───
+
+const rinaBusinessText = `Yeah, there are many small business in the place where I lived, especially it's Christmas season now. And almost every time I went to the street, I could saw I could see someone are selling some Christmas decorations like, mm, tiny Christmas tree trees made by theirselves. For the second question, for me, compared to buying things from small business, I prefer to buy products from big companies like chain stores or something because I think they have better after sales guarantee. If you have any quality issues, you can return your product and refund your money at any time you want, so I think big companies can always have better commitment compared to the small business. For the third question, um, honestly, I don't think I will create my own small business in the future because I'm not the type of person who is very interested in business stuff and I don't think I have enough business knowledge or marketing knowledge or market perception. So I don't think this career is suitable for me and uh, I don't think I am that responsible for taking care of the business.`
+
+export const rinaBusinessTranscript: Transcript = {
+  id: "rina_business_001",
+  title: "Small Businesses",
+  date: "2026-02-10",
+  prompt:
+    "Answer the following questions about small businesses:\n- Are there many small businesses where you live?\n- Do you prefer shopping at small businesses or big companies? Why?\n- Would you ever consider starting your own small business?",
+  content: rinaBusinessText,
+  score: 60,
+  errors: [
+    {
+      id: "B1",
+      startIndex: rinaBusinessText.indexOf("many small business"),
+      endIndex:
+        rinaBusinessText.indexOf("many small business") +
+        "many small business".length,
+      category: "singular-plural",
+      original: "many small business",
+      correction: "many small businesses",
+      explanation:
+        "'Many' signals more than one, so the noun needs its plural form. 'Business' becomes 'businesses'. This pattern comes up several more times in your answer -- it's a good one to lock in!",
+      rule: "'Many' + noun = always plural: many businesses, many people, many ideas.",
+    },
+    {
+      id: "B2",
+      startIndex: rinaBusinessText.indexOf("where I lived"),
+      endIndex:
+        rinaBusinessText.indexOf("where I lived") + "where I lived".length,
+      category: "tense",
+      original: "where I lived",
+      correction: "where I live",
+      explanation:
+        "You're still living there right now, so use present tense 'live'. Only use past tense 'lived' if you've moved away. Think: is this still true? Yes → present tense.",
+      rule: "Still true now? Use present tense. Finished in the past? Use past tense.",
+    },
+    {
+      id: "B3",
+      startIndex: rinaBusinessText.indexOf("especially it's"),
+      endIndex:
+        rinaBusinessText.indexOf("especially it's") +
+        "especially it's".length,
+      category: "verb-patterns",
+      original: "especially it's",
+      correction: "especially since it's",
+      explanation:
+        "You need the connector 'since' to link your reason (Christmas season) to your statement. Without it, the two clauses feel disconnected. Pattern: 'especially since + reason'.",
+      rule: "To introduce a reason: 'especially since + clause'. 'Since' means 'because' here.",
+    },
+    {
+      id: "B4",
+      startIndex: rinaBusinessText.indexOf("someone are selling"),
+      endIndex:
+        rinaBusinessText.indexOf("someone are selling") +
+        "someone are selling".length,
+      category: "subject-verb",
+      original: "someone are selling",
+      correction: "someone selling / someone was selling",
+      explanation:
+        "'Someone' is always singular -- think of it as 'one person'. So it takes a singular verb. The simplest fix: drop the verb entirely ('I could see someone selling') or use 'was' ('someone was selling').",
+      rule: "Someone / anyone / everyone / no one = always singular verb.",
+      alternatives: [
+        {
+          label: "Drop the verb (natural)",
+          correction: "I could see someone selling",
+          explanation:
+            "After 'see', you can drop the 'to be' verb: 'I could see someone selling' = natural and correct.",
+        },
+        {
+          label: "Use singular verb",
+          correction: "someone was selling",
+          explanation:
+            "'Someone' + singular past verb. Use 'was' (not 'were') to match the singular subject.",
+        },
+      ],
+    },
+    {
+      id: "B5",
+      startIndex: rinaBusinessText.indexOf("made by theirselves"),
+      endIndex:
+        rinaBusinessText.indexOf("made by theirselves") +
+        "made by theirselves".length,
+      category: "word-form-choice",
+      original: "made by theirselves",
+      correction: "made by themselves",
+      explanation:
+        "'Theirselves' isn't standard English -- it doesn't exist as a real word. The correct reflexive pronoun for 'they' is 'themselves'. Reflexive pronouns follow a pattern: myself, yourself, himself, herself, ourselves, themselves.",
+      rule: "Reflexive pronouns: myself, yourself, himself, herself, ourselves, themselves. No 'theirselves'.",
+    },
+    {
+      id: "B6",
+      startIndex: rinaBusinessText.indexOf("from small business,"),
+      endIndex:
+        rinaBusinessText.indexOf("from small business,") +
+        "from small business".length,
+      category: "singular-plural",
+      original: "from small business",
+      correction: "from small businesses",
+      explanation:
+        "Same pattern as earlier -- you're talking about multiple small businesses in general, so use the plural. This comes up four times in your answer, which makes it a pattern to work on!",
+      rule: "Talking about a category or multiple examples = plural noun.",
+    },
+    {
+      id: "B7",
+      startIndex: rinaBusinessText.indexOf("the small business."),
+      endIndex:
+        rinaBusinessText.indexOf("the small business.") +
+        "the small business".length,
+      category: "singular-plural",
+      original: "the small business",
+      correction: "small businesses",
+      explanation:
+        "Two things here: (1) you're talking about small businesses in general (not one specific one), so use the plural 'businesses', and (2) drop 'the' since you're not referring to a specific business your listener already knows.",
+      rule: "General category = no article + plural: small businesses (not 'the small business').",
+    },
+    {
+      id: "B8",
+      startIndex: rinaBusinessText.indexOf("better commitment"),
+      endIndex:
+        rinaBusinessText.indexOf("better commitment") +
+        "better commitment".length,
+      category: "singular-plural",
+      original: "better commitment",
+      correction: "better commitments",
+      explanation:
+        "Big companies make multiple types of commitments (quality, refunds, service, etc.), so the plural 'commitments' is more natural here.",
+      rule: "When referring to multiple types of something, use the plural form.",
+    },
+    {
+      id: "B9",
+      startIndex: rinaBusinessText.indexOf("I am that responsible"),
+      endIndex:
+        rinaBusinessText.indexOf("I am that responsible") +
+        "I am that responsible".length,
+      category: "word-form-choice",
+      original: "I am that responsible",
+      correction: "I am responsible enough",
+      explanation:
+        "'That + adjective + for' isn't a standard English pattern when expressing capability. The natural way to say this is 'adjective + enough + to + verb': 'responsible enough to take care of a business'.",
+      rule: "To say you have enough of a quality: adjective + enough + to + verb. E.g. 'confident enough to speak', 'experienced enough to lead'.",
+    },
+    {
+      id: "B10",
+      startIndex: rinaBusinessText.indexOf("taking care of the business"),
+      endIndex:
+        rinaBusinessText.indexOf("taking care of the business") +
+        "taking care of the business".length,
+      category: "articles",
+      original: "taking care of the business",
+      correction: "taking care of a business",
+      explanation:
+        "You're imagining a hypothetical future business -- it doesn't exist yet and isn't specific. Use 'a business' (introducing something new/indefinite), not 'the business' (which points to something specific both people already know about).",
+      rule: "Hypothetical or first-mention = 'a/an'. Specific, already known = 'the'.",
+      alternatives: [
+        {
+          label: "More natural phrasing",
+          correction: "running a business",
+          explanation:
+            "'Running a business' is the more common and natural phrase for managing a business day-to-day.",
+        },
+      ],
+    },
+  ],
+}
+
 export const transcriptList: Omit<Transcript, "content" | "errors">[] = [
   { id: "rina_happiness_001", title: "Happiness and Well-being", date: "2026-02-14", score: 74 },
-  { id: "t2", title: "History Essay Draft", date: "2026-02-10", score: 78 },
-  { id: "t3", title: "Lab Report Discussion", date: "2026-02-05", score: 65 },
-  { id: "t4", title: "Book Review: 1984", date: "2026-01-28", score: 82 },
-  { id: "t5", title: "Debate Preparation Notes", date: "2026-01-20", score: 70 },
-  { id: "t6", title: "Personal Narrative", date: "2026-01-12", score: 88 },
+  { id: "rina_business_001", title: "Small Businesses", date: "2026-02-10", score: 60 },
 ]
+
+export const rinaTranscriptMap: Record<string, Transcript> = {
+  rina_happiness_001: sampleTranscript,
+  rina_business_001: rinaBusinessTranscript,
+}
 
 // ─── Trend data (approximated across 9 conversations) ───
 

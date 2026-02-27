@@ -15,14 +15,17 @@ import {
   errorPatterns,
   sampleTranscript,
   transcriptList,
+  rinaTranscriptMap,
   overallTrend,
   categoryTrend,
 } from "@/lib/grammar-data"
 import type { ErrorPattern } from "@/lib/grammar-data"
 
 export default function GrammarDashboard() {
-  const [activeTranscript, setActiveTranscript] = useState(sampleTranscript.id)
+  const [activeTranscriptId, setActiveTranscriptId] = useState(sampleTranscript.id)
   const [studyPattern, setStudyPattern] = useState<ErrorPattern | null>(null)
+
+  const activeTranscript = rinaTranscriptMap[activeTranscriptId] ?? sampleTranscript
 
   const totalErrors = errorPatterns.reduce((sum, p) => sum + p.count, 0)
 
@@ -76,12 +79,12 @@ export default function GrammarDashboard() {
               <div className="lg:col-span-1">
                 <TranscriptList
                   transcripts={transcriptList}
-                  activeId={activeTranscript}
-                  onSelect={setActiveTranscript}
+                  activeId={activeTranscriptId}
+                  onSelect={setActiveTranscriptId}
                 />
               </div>
               <div className="lg:col-span-3">
-                <TranscriptViewer transcript={sampleTranscript} />
+                <TranscriptViewer transcript={activeTranscript} />
               </div>
             </div>
           </TabsContent>
