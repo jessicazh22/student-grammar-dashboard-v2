@@ -1,16 +1,7 @@
 "use client"
 
 import { useState, useMemo, Fragment } from "react"
-import {
-  Check,
-  X,
-  ChevronLeft,
-  ChevronRight,
-  ChevronDown,
-  BookOpen,
-  Filter,
-  MessageSquareText,
-} from "lucide-react"
+import { Check, X, ChevronLeft, ChevronRight, ChevronDown, BookOpen, ListFilter as Filter, MessageSquareText } from "lucide-react"
 import {
   Collapsible,
   CollapsibleContent,
