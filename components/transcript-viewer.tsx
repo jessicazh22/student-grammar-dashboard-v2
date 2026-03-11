@@ -2,7 +2,6 @@
 
 import { useState, useMemo, Fragment } from "react"
 import {
-  ArrowRight,
   Check,
   X,
   ChevronLeft,
@@ -10,8 +9,6 @@ import {
   ChevronDown,
   BookOpen,
   Filter,
-  Lightbulb,
-  GitFork,
   MessageSquareText,
 } from "lucide-react"
 import {
@@ -20,7 +17,6 @@ import {
   CollapsibleTrigger,
 } from "@/components/ui/collapsible"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
 import {
   Tooltip,
   TooltipContent,
@@ -29,169 +25,8 @@ import {
 import type { Transcript, TranscriptError, ErrorCategory } from "@/lib/grammar-data"
 import { categoryMeta } from "@/lib/grammar-data"
 import { cn } from "@/lib/utils"
+import { ErrorPopoverComparison } from "@/components/error-popover-comparison"
 
-function ErrorPopover({
-  error,
-  onAccept,
-  onDismiss,
-}: {
-  error: TranscriptError
-  onAccept: (id: string) => void
-  onDismiss: (id: string) => void
-}) {
-  const meta = categoryMeta[error.category] ?? { label: error.category, color: "var(--chart-1)" }
-  const isSuggestion = error.kind === "suggestion"
-  const hasAlternatives = error.alternatives && error.alternatives.length > 0
-
-  return (
-    <div className="w-[280px] sm:w-[320px] space-y-3">
-      {/* Header badge */}
-      <div className="flex items-center gap-2">
-        {isSuggestion ? (
-          <Badge
-            variant="outline"
-            className="text-[10px] uppercase tracking-wider font-semibold border-suggestion/40 text-suggestion bg-suggestion/5"
-          >
-            <Lightbulb className="h-3 w-3 mr-1" />
-            {meta.label}
-          </Badge>
-        ) : (
-          <Badge
-            variant="outline"
-            className="text-[10px] uppercase tracking-wider font-semibold"
-          >
-            {meta.label}
-          </Badge>
-        )}
-      </div>
-
-      {/* Original text */}
-      <div className="flex items-center gap-2 flex-wrap">
-        <span
-          className={cn(
-            "text-sm px-1.5 py-0.5 rounded",
-            isSuggestion
-              ? "text-suggestion bg-suggestion/5 border border-dashed border-suggestion/30"
-              : "line-through text-destructive/80 bg-destructive/5"
-          )}
-        >
-          {error.original}
-        </span>
-        {!hasAlternatives && (
-          <>
-            <ArrowRight className="h-3 w-3 text-muted-foreground shrink-0" />
-            <span className="text-sm text-success bg-success/5 px-1.5 py-0.5 rounded font-medium">
-              {error.correction}
-            </span>
-          </>
-        )}
-      </div>
-
-      {/* Explanation */}
-      <p className="text-xs text-muted-foreground leading-relaxed">
-        {error.explanation}
-      </p>
-
-      {/* Branching alternatives */}
-      {hasAlternatives && (
-        <div className="relative space-y-0 pt-0.5">
-          {/* Branch connector line */}
-          <div className="flex items-center gap-2 pb-2">
-            <GitFork className={cn(
-              "h-3.5 w-3.5 rotate-180",
-              isSuggestion ? "text-suggestion" : "text-success"
-            )} />
-            <span className={cn(
-              "text-[10px] font-semibold uppercase tracking-wider",
-              isSuggestion ? "text-suggestion" : "text-success"
-            )}>
-              {isSuggestion ? "Try either" : "Two ways to fix"}
-            </span>
-          </div>
-          <div className="space-y-2 ml-1 border-l-2 border-dashed border-muted-foreground/20 pl-3">
-            {error.alternatives!.map((alt, i) => (
-              <div
-                key={i}
-                className={cn(
-                  "rounded-lg border px-3 py-2.5 space-y-1",
-                  isSuggestion
-                    ? "border-suggestion/20 bg-suggestion/5"
-                    : "border-success/20 bg-success/5"
-                )}
-              >
-                <div className="flex items-center gap-2">
-                  <span className={cn(
-                    "inline-flex items-center justify-center h-4 w-4 rounded-full text-[9px] font-bold shrink-0",
-                    isSuggestion
-                      ? "bg-suggestion/15 text-suggestion"
-                      : "bg-success/15 text-success"
-                  )}>
-                    {String.fromCharCode(65 + i)}
-                  </span>
-                  <span className="text-[10px] text-muted-foreground">
-                    {alt.label}
-                  </span>
-                </div>
-                <p className={cn(
-                  "text-sm font-medium",
-                  isSuggestion ? "text-suggestion" : "text-success"
-                )}>
-                  {alt.correction}
-                </p>
-                <p className="text-[11px] text-muted-foreground leading-relaxed">
-                  {alt.explanation}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
-
-      {/* Rule box */}
-      <div className={cn(
-        "rounded-md px-2.5 py-2 border",
-        isSuggestion
-          ? "bg-suggestion/5 border-suggestion/10"
-          : "bg-primary/5 border-primary/10"
-      )}>
-        <span className={cn(
-          "text-[10px] font-semibold uppercase tracking-wider",
-          isSuggestion ? "text-suggestion" : "text-primary"
-        )}>
-          {isSuggestion ? "Tip" : "Rule"}
-        </span>
-        <p className="text-xs text-foreground mt-0.5 leading-relaxed">
-          {error.rule}
-        </p>
-      </div>
-
-      {/* Actions */}
-      <div className="flex items-center gap-2 pt-1">
-        <button
-          type="button"
-          onClick={() => onAccept(error.id)}
-          className={cn(
-            "flex flex-1 items-center justify-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-medium transition-colors cursor-pointer",
-            isSuggestion
-              ? "bg-suggestion text-suggestion-foreground hover:bg-suggestion/90"
-              : "bg-success text-success-foreground hover:bg-success/90"
-          )}
-        >
-          <Check className="h-3.5 w-3.5" />
-          {isSuggestion ? "Got it" : "Accept"}
-        </button>
-        <button
-          type="button"
-          onClick={() => onDismiss(error.id)}
-          className="flex flex-1 items-center justify-center gap-1.5 rounded-lg border border-border bg-card px-3 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:bg-muted cursor-pointer"
-        >
-          <X className="h-3.5 w-3.5" />
-          Dismiss
-        </button>
-      </div>
-    </div>
-  )
-}
 
 interface AnnotatedSegment {
   type: "text" | "error"
@@ -475,7 +310,7 @@ export function TranscriptViewer({
                   side="bottom"
                   className="bg-card text-card-foreground border border-border p-4 shadow-lg"
                 >
-                  <ErrorPopover
+                  <ErrorPopoverComparison
                     error={error}
                     onAccept={handleAccept}
                     onDismiss={handleDismiss}
